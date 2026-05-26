@@ -1,0 +1,333 @@
+{
+  "version": "1.0",
+  "plan": {
+    "id": "30day-plan-1",
+    "title": "My First 30 Days",
+    "titleKo": "나의 첫 30일",
+    "totalDays": 30,
+    "verses": [
+      {
+        "id": "psalm-56-3",
+        "dayStart": 1,
+        "dayEnd": 3
+      },
+      {
+        "id": "philippians-4-4",
+        "dayStart": 4,
+        "dayEnd": 6
+      },
+      {
+        "id": "psalm-150-6",
+        "dayStart": 7,
+        "dayEnd": 9
+      },
+      {
+        "id": "psalm-118-24",
+        "dayStart": 10,
+        "dayEnd": 12
+      },
+      {
+        "id": "psalm-136-1",
+        "dayStart": 13,
+        "dayEnd": 15
+      },
+      {
+        "id": "philippians-4-13",
+        "dayStart": 16,
+        "dayEnd": 18
+      },
+      {
+        "id": "luke-6-31",
+        "dayStart": 19,
+        "dayEnd": 21
+      },
+      {
+        "id": "colossians-3-20",
+        "dayStart": 22,
+        "dayEnd": 24
+      },
+      {
+        "id": "psalm-119-105",
+        "dayStart": 25,
+        "dayEnd": 27
+      },
+      {
+        "id": "proverbs-3-5",
+        "dayStart": 28,
+        "dayEnd": 30
+      }
+    ]
+  },
+  "verses": [
+    {
+      "id": "psalm-56-3",
+      "reference": {
+        "book": "Psalm",
+        "bookKo": "시편",
+        "chapter": 56,
+        "verse": 3,
+        "display": "Psalm 56:3",
+        "displayKo": "시편 56:3"
+      },
+      "theme": {
+        "en": "When I'm afraid",
+        "ko": "두려울 때"
+      },
+      "text": {
+        "ko": {
+          "full": "내가 두려워하는 날에는 주를 의지하리이다",
+          "translation": "개역한글"
+        },
+        "en": {
+          "full": "When I am afraid, I will put my trust in you.",
+          "translation": "WEB"
+        }
+      },
+
+      "song": {
+        "ko": "/audio/songs/psalm-56-3-ko.mp3",
+        "en": "/audio/songs/psalm-56-3-en.mp3"
+      },
+
+      "imageAssociation": {
+        "sequence": [
+          {
+            "emoji": "😨",
+            "keyword": "afraid",
+            "keywordKo": "두려워하는",
+            "label": "afraid"
+          },
+          {
+            "emoji": "🙏",
+            "keyword": "trust",
+            "keywordKo": "의지",
+            "label": "trust"
+          },
+          {
+            "emoji": "😊",
+            "keyword": "peace",
+            "keywordKo": "평안",
+            "label": "peace"
+          }
+        ],
+        "simpleExplanation": {
+          "en": "When I'm scared, I trust God and feel safe!",
+          "ko": "무서울 때, 하나님을 믿으면 마음이 편해져요!"
+        }
+      },
+
+      "chunks": {
+        "ko": [
+          "내가 두려워하는 날에는",
+          "주를 의지하리이다"
+        ],
+        "en": [
+          "When I am afraid,",
+          "I will put my trust in you."
+        ]
+      },
+
+      "games": {
+        "fillInBlank": {
+          "ko": {
+            "template": "{blank} 날에는 주를 {blank} 하리이다",
+            "blanks": [
+              {
+                "answer": "두려워하는",
+                "answerEmoji": "😨",
+                "options": [
+                  { "emoji": "😨", "label": "afraid", "labelKo": "두려워하는", "correct": true },
+                  { "emoji": "😊", "label": "happy", "labelKo": "기쁜", "correct": false },
+                  { "emoji": "😡", "label": "angry", "labelKo": "화나는", "correct": false }
+                ]
+              },
+              {
+                "answer": "의지",
+                "answerEmoji": "🙏",
+                "options": [
+                  { "emoji": "🙏", "label": "trust", "labelKo": "의지", "correct": true },
+                  { "emoji": "💪", "label": "strong", "labelKo": "강한", "correct": false },
+                  { "emoji": "🏃", "label": "run", "labelKo": "도망", "correct": false }
+                ]
+              }
+            ]
+          },
+          "en": {
+            "template": "When I am {blank}, I will put my {blank} in you.",
+            "blanks": [
+              {
+                "answer": "afraid",
+                "answerEmoji": "😨",
+                "options": [
+                  { "emoji": "😨", "label": "afraid", "correct": true },
+                  { "emoji": "😊", "label": "happy", "correct": false },
+                  { "emoji": "😡", "label": "angry", "correct": false }
+                ]
+              },
+              {
+                "answer": "trust",
+                "answerEmoji": "🙏",
+                "options": [
+                  { "emoji": "🙏", "label": "trust", "correct": true },
+                  { "emoji": "💪", "label": "strength", "correct": false },
+                  { "emoji": "🏃", "label": "run away", "correct": false }
+                ]
+              }
+            ]
+          }
+        },
+        "firstLetter": {
+          "ko": [
+            { "word": "두려워하는", "hint": "ㄷ____" },
+            { "word": "의지", "hint": "ㅇ_" }
+          ],
+          "en": [
+            { "word": "afraid", "hint": "a_____" },
+            { "word": "trust", "hint": "t____" }
+          ]
+        }
+      },
+
+      "tts": {
+        "ko": "/audio/tts/psalm-56-3-ko.mp3",
+        "en": "/audio/tts/psalm-56-3-en.mp3",
+        "chunksKo": [
+          "/audio/tts/psalm-56-3-chunk-1-ko.mp3",
+          "/audio/tts/psalm-56-3-chunk-2-ko.mp3"
+        ],
+        "chunksEn": [
+          "/audio/tts/psalm-56-3-chunk-1-en.mp3",
+          "/audio/tts/psalm-56-3-chunk-2-en.mp3"
+        ]
+      }
+    },
+
+    {
+      "id": "philippians-4-4",
+      "reference": {
+        "book": "Philippians",
+        "bookKo": "빌립보서",
+        "chapter": 4,
+        "verse": 4,
+        "display": "Philippians 4:4",
+        "displayKo": "빌립보서 4:4"
+      },
+      "theme": {
+        "en": "Joy",
+        "ko": "기쁨"
+      },
+      "text": {
+        "ko": {
+          "full": "주 안에서 항상 기뻐하라 내가 다시 말하노니 기뻐하라",
+          "translation": "개역한글"
+        },
+        "en": {
+          "full": "Rejoice in the Lord always! Again I will say, \"Rejoice!\"",
+          "translation": "WEB"
+        }
+      },
+      "song": {
+        "ko": "/audio/songs/philippians-4-4-ko.mp3",
+        "en": "/audio/songs/philippians-4-4-en.mp3"
+      },
+      "imageAssociation": {
+        "sequence": [
+          { "emoji": "🎉", "keyword": "rejoice", "keywordKo": "기뻐하라", "label": "rejoice" },
+          { "emoji": "😄", "keyword": "always", "keywordKo": "항상", "label": "always" },
+          { "emoji": "🔁", "keyword": "again", "keywordKo": "다시", "label": "again" },
+          { "emoji": "😄", "keyword": "rejoice!", "keywordKo": "기뻐하라!", "label": "rejoice!" }
+        ],
+        "simpleExplanation": {
+          "en": "Be happy with God, always! Let's say it again — be happy!",
+          "ko": "하나님 안에서 항상 기뻐해요! 다시 한번 — 기뻐해요!"
+        }
+      },
+      "chunks": {
+        "ko": [
+          "주 안에서 항상 기뻐하라",
+          "내가 다시 말하노니",
+          "기뻐하라"
+        ],
+        "en": [
+          "Rejoice in the Lord always!",
+          "Again I will say,",
+          "\"Rejoice!\""
+        ]
+      },
+      "games": {
+        "fillInBlank": {
+          "ko": {
+            "template": "주 안에서 항상 {blank} 내가 다시 말하노니 {blank}",
+            "blanks": [
+              {
+                "answer": "기뻐하라",
+                "answerEmoji": "🎉",
+                "options": [
+                  { "emoji": "🎉", "label": "rejoice", "labelKo": "기뻐하라", "correct": true },
+                  { "emoji": "😢", "label": "cry", "labelKo": "울어라", "correct": false },
+                  { "emoji": "😴", "label": "sleep", "labelKo": "자라", "correct": false }
+                ]
+              },
+              {
+                "answer": "기뻐하라",
+                "answerEmoji": "😄",
+                "options": [
+                  { "emoji": "😄", "label": "rejoice!", "labelKo": "기뻐하라!", "correct": true },
+                  { "emoji": "😠", "label": "be angry", "labelKo": "화내라", "correct": false },
+                  { "emoji": "🤫", "label": "be quiet", "labelKo": "조용히 해라", "correct": false }
+                ]
+              }
+            ]
+          },
+          "en": {
+            "template": "{blank} in the Lord always! Again I will say, \"{blank}!\"",
+            "blanks": [
+              {
+                "answer": "Rejoice",
+                "answerEmoji": "🎉",
+                "options": [
+                  { "emoji": "🎉", "label": "Rejoice", "correct": true },
+                  { "emoji": "😢", "label": "Cry", "correct": false },
+                  { "emoji": "😴", "label": "Sleep", "correct": false }
+                ]
+              },
+              {
+                "answer": "Rejoice",
+                "answerEmoji": "😄",
+                "options": [
+                  { "emoji": "😄", "label": "Rejoice", "correct": true },
+                  { "emoji": "😠", "label": "Complain", "correct": false },
+                  { "emoji": "🤫", "label": "Be quiet", "correct": false }
+                ]
+              }
+            ]
+          }
+        },
+        "firstLetter": {
+          "ko": [
+            { "word": "기뻐하라", "hint": "ㄱ___" },
+            { "word": "항상", "hint": "ㅎ_" }
+          ],
+          "en": [
+            { "word": "Rejoice", "hint": "R______" },
+            { "word": "always", "hint": "a_____" }
+          ]
+        }
+      },
+      "tts": {
+        "ko": "/audio/tts/philippians-4-4-ko.mp3",
+        "en": "/audio/tts/philippians-4-4-en.mp3",
+        "chunksKo": [
+          "/audio/tts/philippians-4-4-chunk-1-ko.mp3",
+          "/audio/tts/philippians-4-4-chunk-2-ko.mp3",
+          "/audio/tts/philippians-4-4-chunk-3-ko.mp3"
+        ],
+        "chunksEn": [
+          "/audio/tts/philippians-4-4-chunk-1-en.mp3",
+          "/audio/tts/philippians-4-4-chunk-2-en.mp3",
+          "/audio/tts/philippians-4-4-chunk-3-en.mp3"
+        ]
+      }
+    }
+  ]
+}

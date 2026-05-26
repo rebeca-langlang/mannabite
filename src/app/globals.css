@@ -1,0 +1,31 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    background-color: #fffaf5;
+    color: #2d2b3d;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    font-family: "Pretendard Variable", "Pretendard", system-ui, sans-serif;
+  }
+  button {
+    font-family: inherit;
+  }
+}
+
+@layer utilities {
+  .verse-text {
+    font-family: "Nanum Myeongjo", "Pretendard Variable", serif;
+    line-height: 1.8;
+  }
+  .tap-target {
+    min-height: 48px;
+    min-width: 48px;
+  }
+}
