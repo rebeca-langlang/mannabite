@@ -132,3 +132,97 @@ export const psalm56_3: Verse = {
     },
   },
 };
+
+export const philippians4_4: Verse = {
+  id: "philippians-4-4",
+  reference: { display: "Philippians 4:4", displayKo: "빌립보서 4:4" },
+  theme: { en: "Joy", ko: "기쁨" },
+  text: {
+    ko: {
+      full: "주 안에서 항상 기뻐하라 내가 다시 말하노니 기뻐하라",
+      translation: "개역한글",
+    },
+    en: {
+      full: "Rejoice in the Lord always! Again I will say, \"Rejoice!\"",
+      translation: "WEB",
+    },
+  },
+  imageAssociation: {
+    sequence: [
+      { emoji: "🎉", keyword: "rejoice", keywordKo: "기뻐하라" },
+      { emoji: "✝️", keyword: "the Lord", keywordKo: "주 안에서" },
+      { emoji: "🔁", keyword: "again", keywordKo: "다시" },
+      { emoji: "😄", keyword: "rejoice!", keywordKo: "기뻐하라!" },
+    ],
+    simpleExplanation: {
+      en: "Be happy because God loves us! So happy we say it twice!",
+      ko: "하나님이 사랑하시니까 기뻐해요! 너무 기뻐서 두 번 말해요!",
+    },
+  },
+  chunks: {
+    ko: ["주 안에서 항상 기뻐하라", "내가 다시 말하노니", "기뻐하라"],
+    en: ["Rejoice in the Lord always!", "Again I will say,", "\"Rejoice!\""],
+  },
+  prayer: {
+    ko: {
+      text: "하나님, 주 안에서 항상 기쁘게 해주세요. 슬플 때도 기뻐할 수 있게 도와주세요. 감사합니다. 아멘.",
+      audioHint: "눈을 감고, 작은 목소리로 따라 말해보세요",
+    },
+    en: {
+      text: "God, help me to always be joyful in You. Even when I'm sad, help me find joy. Thank You. Amen.",
+      audioHint: "Close your eyes and whisper along",
+    },
+  },
+  games: {
+    fillInBlank: {
+      ko: {
+        template: "주 안에서 항상 {blank} 내가 다시 말하노니 {blank}",
+        blanks: [
+          {
+            answer: "기뻐하라",
+            answerEmoji: "🎉",
+            options: [
+              { emoji: "🎉", label: "rejoice", labelKo: "기뻐하라", correct: true },
+              { emoji: "😢", label: "cry", labelKo: "울어라", correct: false },
+              { emoji: "😴", label: "sleep", labelKo: "자라", correct: false },
+            ],
+          },
+          {
+            answer: "기뻐하라",
+            answerEmoji: "😄",
+            options: [
+              { emoji: "😄", label: "rejoice", labelKo: "기뻐하라", correct: true },
+              { emoji: "😡", label: "angry", labelKo: "화내라", correct: false },
+              { emoji: "🤫", label: "quiet", labelKo: "조용하라", correct: false },
+            ],
+          },
+        ],
+      },
+      en: {
+        template: "{blank} in the Lord always! Again I will say, \"{blank}\"",
+        blanks: [
+          {
+            answer: "Rejoice",
+            answerEmoji: "🎉",
+            options: [
+              { emoji: "🎉", label: "Rejoice", correct: true },
+              { emoji: "😢", label: "Cry", correct: false },
+              { emoji: "😴", label: "Sleep", correct: false },
+            ],
+          },
+          {
+            answer: "Rejoice!",
+            answerEmoji: "😄",
+            options: [
+              { emoji: "😄", label: "Rejoice!", correct: true },
+              { emoji: "😡", label: "Complain!", correct: false },
+              { emoji: "🤫", label: "Be quiet!", correct: false },
+            ],
+          },
+        ],
+      },
+    },
+  },
+};
+
+export const VERSES: Verse[] = [psalm56_3, philippians4_4];
