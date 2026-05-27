@@ -18,6 +18,11 @@ export type FillInBlank = {
   blanks: Blank[];
 };
 
+export type Prayer = {
+  text: string;
+  audioHint: string;
+};
+
 export type Verse = {
   id: string;
   reference: { display: string; displayKo: string };
@@ -31,6 +36,7 @@ export type Verse = {
     simpleExplanation: { en: string; ko: string };
   };
   chunks: { ko: string[]; en: string[] };
+  prayer: { ko: Prayer; en: Prayer };
   games: {
     fillInBlank: { ko: FillInBlank; en: FillInBlank };
   };
@@ -64,6 +70,16 @@ export const psalm56_3: Verse = {
   chunks: {
     ko: ["내가 두려워하는 날에는", "주를 의지하리이다"],
     en: ["When I am afraid,", "I will put my trust in you."],
+  },
+  prayer: {
+    ko: {
+      text: "하나님, 제가 무서울 때 하나님을 믿을게요. 항상 저와 함께해 주셔서 감사합니다. 아멘.",
+      audioHint: "눈을 감고, 작은 목소리로 따라 말해보세요",
+    },
+    en: {
+      text: "God, when I am afraid, I will trust in You. Thank You for always being with me. Amen.",
+      audioHint: "Close your eyes and whisper along",
+    },
   },
   games: {
     fillInBlank: {

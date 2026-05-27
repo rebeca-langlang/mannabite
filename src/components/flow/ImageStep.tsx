@@ -8,7 +8,7 @@ type Props = {
   lang: Lang;
   onLangChange: (l: Lang) => void;
   onNext: () => void;
-  onBack: () => void;
+  onBack?: () => void;
 };
 
 export function ImageStep({ verse, lang, onLangChange, onNext, onBack }: Props) {
@@ -52,17 +52,19 @@ export function ImageStep({ verse, lang, onLangChange, onNext, onBack }: Props) 
       <LangToggle lang={lang} onChange={onLangChange} />
 
       <div className="mt-2 flex gap-3">
-        <button
-          type="button"
-          onClick={onBack}
-          className="tap-target flex-1 rounded-card border border-honey/20 py-4 text-base font-semibold text-honey-dark active:scale-[0.98]"
-        >
-          ← 이전
-        </button>
+        {onBack && (
+          <button
+            type="button"
+            onClick={onBack}
+            className="tap-target flex-1 rounded-card border border-honey/20 py-4 text-base font-semibold text-honey-dark active:scale-[0.98]"
+          >
+            ← 이전
+          </button>
+        )}
         <button
           type="button"
           onClick={onNext}
-          className="tap-target flex-[2] rounded-card bg-honey py-4 text-base font-semibold text-white shadow-play active:scale-[0.98]"
+          className={`tap-target rounded-card bg-honey py-4 text-base font-semibold text-white shadow-play active:scale-[0.98] ${onBack ? "flex-[2]" : "w-full"}`}
         >
           다음 →
         </button>
