@@ -32,7 +32,7 @@ export function Settings({ save, onChangeCharacter, onReset, onClose }: Props) {
       <div className="rounded-card bg-white p-4 shadow-play">
         <p className="mb-3 text-sm font-semibold text-ink">내 캐릭터</p>
         <div className="flex items-center gap-4">
-          <Image src={charSrc} alt="내 캐릭터" width={80} height={80} className="rounded-card" />
+          <Image src={charSrc} alt="내 캐릭터" width={80} height={80} className="h-[80px] w-[80px] rounded-card object-cover" />
           <button
             type="button"
             onClick={onChangeCharacter}

@@ -40,7 +40,7 @@ export function HomeScreen({ save, onStart, onSettings }: Props) {
       </div>
 
       <div className="flex flex-col items-center gap-1 py-2">
-        <Image src={charSrc} alt="내 캐릭터" width={100} height={100} className="rounded-card" />
+        <Image src={charSrc} alt="내 캐릭터" width={100} height={100} className="h-[100px] w-[100px] rounded-card object-cover" />
         <p className="mt-1 text-sm font-bold text-ink">
           Lv.{level} {title}
         </p>

@@ -45,7 +45,7 @@ export function CharacterSelect({ onComplete }: Props) {
               alt={g === "boy" ? "남자아이" : "여자아이"}
               width={120}
               height={120}
-              className="rounded-card"
+              className="h-[120px] w-[120px] rounded-card object-cover"
             />
             <span className="text-sm font-semibold text-ink">
               {g === "boy" ? "남자아이" : "여자아이"}
@@ -62,7 +62,7 @@ export function CharacterSelect({ onComplete }: Props) {
               alt="내 캐릭터"
               width={160}
               height={160}
-              className="rounded-card"
+              className="h-[160px] w-[160px] rounded-card object-cover"
             />
             <p className="mt-2 text-sm font-semibold text-ink">내 캐릭터</p>
           </div>
