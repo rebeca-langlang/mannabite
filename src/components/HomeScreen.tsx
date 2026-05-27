@@ -1,8 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { VERSES } from "@/data/verses";
 import {
-  CHARACTER_EMOJI,
+  CHARACTER_IMAGE,
   getLevel,
   getVerseIndex,
   type SaveData,
@@ -19,7 +20,7 @@ export function HomeScreen({ save, onStart, onSettings }: Props) {
   const { level, title } = getLevel(totalStars);
   const verseIndex = getVerseIndex(currentDay);
   const verse = VERSES[verseIndex];
-  const emoji = CHARACTER_EMOJI[character.gender][character.skinTone];
+  const charSrc = CHARACTER_IMAGE[character.gender];
   const allDone = currentDay > 30;
 
   return (
@@ -39,7 +40,7 @@ export function HomeScreen({ save, onStart, onSettings }: Props) {
       </div>
 
       <div className="flex flex-col items-center gap-1 py-2">
-        <span className="text-7xl">{emoji}</span>
+        <Image src={charSrc} alt="내 캐릭터" width={100} height={100} className="rounded-card" />
         <p className="mt-1 text-sm font-bold text-ink">
           Lv.{level} {title}
         </p>

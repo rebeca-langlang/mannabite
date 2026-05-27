@@ -54,6 +54,11 @@ export const CHARACTER_EMOJI: Record<CharacterGender, Record<SkinTone, string>> 
   girl: { light: "👧🏻", medium: "👧🏽", dark: "👧🏿" },
 };
 
+export const CHARACTER_IMAGE: Record<CharacterGender, string> = {
+  boy: "/characters/boy.png",
+  girl: "/characters/girl.png",
+};
+
 const LEVELS = [
   { min: 0, title: "말씀 새싹" },
   { min: 10, title: "말씀 탐험가" },

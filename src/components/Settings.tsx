@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { CHARACTER_EMOJI, type SaveData } from "@/lib/storage";
+import Image from "next/image";
+import { CHARACTER_IMAGE, type SaveData } from "@/lib/storage";
 
 type Props = {
   save: SaveData;
@@ -12,8 +13,7 @@ type Props = {
 
 export function Settings({ save, onChangeCharacter, onReset, onClose }: Props) {
   const [confirmReset, setConfirmReset] = useState(false);
-  const emoji =
-    CHARACTER_EMOJI[save.character.gender][save.character.skinTone];
+  const charSrc = CHARACTER_IMAGE[save.character.gender];
 
   return (
     <section className="flex flex-col gap-5 px-4 pb-28 pt-6">
@@ -32,7 +32,7 @@ export function Settings({ save, onChangeCharacter, onReset, onClose }: Props) {
       <div className="rounded-card bg-white p-4 shadow-play">
         <p className="mb-3 text-sm font-semibold text-ink">내 캐릭터</p>
         <div className="flex items-center gap-4">
-          <span className="text-5xl">{emoji}</span>
+          <Image src={charSrc} alt="내 캐릭터" width={80} height={80} className="rounded-card" />
           <button
             type="button"
             onClick={onChangeCharacter}
