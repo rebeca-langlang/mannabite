@@ -5,10 +5,11 @@ import type { Verse } from "@/data/verses";
 type Props = {
   verse: Verse;
   stars: number;
-  onRestart: () => void;
+  streak: number;
+  onHome: () => void;
 };
 
-export function DoneStep({ verse, stars, onRestart }: Props) {
+export function DoneStep({ verse, stars, streak, onHome }: Props) {
   const xp = stars * 5 + 10;
   return (
     <section className="flex flex-col items-center gap-6 px-4 pb-28 pt-8 text-center">
@@ -39,15 +40,15 @@ export function DoneStep({ verse, stars, onRestart }: Props) {
       </div>
 
       <div className="rounded-pill bg-honey-tint px-4 py-2 text-xs font-semibold text-honey-dark">
-        🔥 1일 연속 학습!
+        🔥 {streak}일 연속 학습!
       </div>
 
       <button
         type="button"
-        onClick={onRestart}
+        onClick={onHome}
         className="tap-target mt-2 w-full rounded-card bg-honey py-4 text-base font-semibold text-white shadow-play active:scale-[0.98]"
       >
-        처음부터 다시 하기
+        홈으로 돌아가기
       </button>
       <p className="text-xs text-ink-sub">내일 다시 만나요! 🌙</p>
     </section>

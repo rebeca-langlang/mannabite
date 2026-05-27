@@ -1,8 +1,20 @@
 "use client";
 
-import { useState } from "react";
-import { VERSES, type Lang, type Verse } from "@/data/verses";
+import { useEffect, useState } from "react";
+import { VERSES, type Lang } from "@/data/verses";
+import {
+  calcStreak,
+  getToday,
+  getVerseIndex,
+  loadSave,
+  writeSave,
+  type Character,
+  type SaveData,
+} from "@/lib/storage";
 import { StepHeader } from "@/components/StepHeader";
+import { CharacterSelect } from "@/components/CharacterSelect";
+import { HomeScreen } from "@/components/HomeScreen";
+import { Settings } from "@/components/Settings";
 import { ImageStep } from "@/components/flow/ImageStep";
 import { SongStep } from "@/components/flow/SongStep";
 import { ChunkStep } from "@/components/flow/ChunkStep";
@@ -11,12 +23,12 @@ import { PrayerStep } from "@/components/flow/PrayerStep";
 import { DoneStep } from "@/components/flow/DoneStep";
 import { stopSpeaking } from "@/lib/speak";
 
-type Step = "select" | "image" | "song" | "chunk" | "game" | "prayer" | "done";
+type Screen = "loading" | "onboarding" | "home" | "settings" | "flow";
+type FlowStep = "image" | "song" | "chunk" | "game" | "prayer" | "done";
 
-const FLOW_STEPS: Step[] = ["image", "song", "chunk", "game", "prayer", "done"];
+const FLOW_STEPS: FlowStep[] = ["image", "song", "chunk", "game", "prayer", "done"];
 
-const STEP_LABEL: Record<Step, string> = {
-  select: "구절 선택",
+const STEP_LABEL: Record<FlowStep, string> = {
   image: "그림으로 이해",
   song: "노래로 만나기",
   chunk: "청크로 쌓기",
@@ -25,129 +37,203 @@ const STEP_LABEL: Record<Step, string> = {
   done: "오늘의 완료",
 };
 
-function VerseSelect({ onSelect }: { onSelect: (v: Verse) => void }) {
-  return (
-    <section className="flex flex-col gap-5 px-4 pb-28 pt-6">
-      <h1 className="font-display text-2xl font-extrabold text-ink">
-        오늘의 말씀
-      </h1>
-      <p className="text-sm text-ink-sub">어떤 구절을 외워볼까요?</p>
-
-      <div className="flex flex-col gap-3">
-        {VERSES.map((v, i) => (
-          <button
-            key={v.id}
-            type="button"
-            onClick={() => onSelect(v)}
-            className="flex items-center gap-4 rounded-card bg-white p-4 text-left shadow-play transition-all active:scale-[0.98]"
-          >
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-honey text-lg font-bold text-white">
-              {i + 1}
-            </span>
-            <div className="flex-1">
-              <p className="text-sm font-semibold text-ink">
-                {v.reference.displayKo}
-              </p>
-              <p className="mt-0.5 text-xs text-ink-sub">{v.theme.ko}</p>
-              <p className="mt-1 text-xs leading-relaxed text-ink-sub">
-                {v.text.ko.full}
-              </p>
-            </div>
-            <span className="text-honey-dark">→</span>
-          </button>
-        ))}
-      </div>
-    </section>
-  );
+function newSave(character: Character): SaveData {
+  return {
+    character,
+    currentDay: 1,
+    completedDays: [],
+    totalStars: 0,
+    streak: 0,
+    lastPlayedDate: "",
+  };
 }
 
 export default function Page() {
-  const [step, setStep] = useState<Step>("select");
-  const [verse, setVerse] = useState<Verse>(VERSES[0]);
+  const [screen, setScreen] = useState<Screen>("loading");
+  const [save, setSave] = useState<SaveData | null>(null);
+  const [flowStep, setFlowStep] = useState<FlowStep>("image");
   const [lang, setLang] = useState<Lang>("ko");
   const [stars, setStars] = useState(0);
 
-  const flowIndex = FLOW_STEPS.indexOf(step);
+  useEffect(() => {
+    const loaded = loadSave();
+    if (loaded) {
+      setSave(loaded);
+      setScreen("home");
+    } else {
+      setScreen("onboarding");
+    }
+  }, []);
 
-  const goto = (s: Step) => {
+  const persist = (data: SaveData) => {
+    setSave(data);
+    writeSave(data);
+  };
+
+  const handleCharacterDone = (character: Character) => {
+    const data = save
+      ? { ...save, character }
+      : newSave(character);
+    persist(data);
+    setScreen("home");
+  };
+
+  const handleStartFlow = () => {
+    setFlowStep("image");
+    setLang("ko");
+    setStars(0);
+    setScreen("flow");
+  };
+
+  const gotoFlow = (s: FlowStep) => {
     stopSpeaking();
-    setStep(s);
+    setFlowStep(s);
   };
 
-  const handleSelect = (v: Verse) => {
-    setVerse(v);
-    setLang("ko");
-    setStars(0);
-    goto("image");
+  const handleGameComplete = (earned: number) => {
+    setStars(earned);
+    gotoFlow("prayer");
   };
 
-  const restart = () => {
-    setStars(0);
-    setLang("ko");
-    goto("select");
+  const handlePrayerDone = () => {
+    if (!save) return;
+    const streak = calcStreak(save);
+    const updated: SaveData = {
+      ...save,
+      completedDays: [...save.completedDays, save.currentDay],
+      currentDay: save.currentDay + 1,
+      totalStars: save.totalStars + stars,
+      streak,
+      lastPlayedDate: getToday(),
+    };
+    persist(updated);
+    gotoFlow("done");
   };
+
+  const handleHome = () => {
+    stopSpeaking();
+    setScreen("home");
+  };
+
+  const handleReset = () => {
+    if (!save) return;
+    const data = newSave(save.character);
+    persist(data);
+    setScreen("home");
+  };
+
+  if (screen === "loading") {
+    return (
+      <main className="mx-auto flex min-h-dvh max-w-[480px] items-center justify-center bg-cream">
+        <p className="text-lg text-ink-sub">로딩 중...</p>
+      </main>
+    );
+  }
+
+  if (screen === "onboarding" || (screen === "settings" && !save)) {
+    return (
+      <main className="mx-auto flex min-h-dvh max-w-[480px] flex-col bg-cream">
+        <CharacterSelect onComplete={handleCharacterDone} />
+      </main>
+    );
+  }
+
+  if (!save) return null;
+
+  if (screen === "settings") {
+    return (
+      <main className="mx-auto flex min-h-dvh max-w-[480px] flex-col bg-cream">
+        <Settings
+          save={save}
+          onChangeCharacter={() => setScreen("onboarding")}
+          onReset={handleReset}
+          onClose={handleHome}
+        />
+      </main>
+    );
+  }
+
+  if (screen === "home") {
+    return (
+      <main className="mx-auto flex min-h-dvh max-w-[480px] flex-col bg-cream">
+        <HomeScreen
+          save={save}
+          onStart={handleStartFlow}
+          onSettings={() => setScreen("settings")}
+        />
+      </main>
+    );
+  }
+
+  const verseIndex = getVerseIndex(save.currentDay);
+  const verse = VERSES[verseIndex];
+  const flowIndex = FLOW_STEPS.indexOf(flowStep);
 
   return (
     <main className="mx-auto flex min-h-dvh max-w-[480px] flex-col bg-cream">
-      {step !== "select" && (
-        <StepHeader
-          step={flowIndex + 1}
-          totalSteps={FLOW_STEPS.length}
-          label={STEP_LABEL[step]}
-          onBack={flowIndex > 0 && step !== "done" ? () => goto(FLOW_STEPS[flowIndex - 1]) : undefined}
-        />
-      )}
+      <StepHeader
+        step={flowIndex + 1}
+        totalSteps={FLOW_STEPS.length}
+        label={STEP_LABEL[flowStep]}
+        onBack={
+          flowIndex > 0 && flowStep !== "done"
+            ? () => gotoFlow(FLOW_STEPS[flowIndex - 1])
+            : flowStep === "image"
+            ? handleHome
+            : undefined
+        }
+      />
 
-      {step === "select" && <VerseSelect onSelect={handleSelect} />}
-
-      {step === "image" && (
+      {flowStep === "image" && (
         <ImageStep
           verse={verse}
           lang={lang}
           onLangChange={setLang}
-          onNext={() => goto("song")}
+          onNext={() => gotoFlow("song")}
         />
       )}
-      {step === "song" && (
+      {flowStep === "song" && (
         <SongStep
           verse={verse}
           lang={lang}
           onLangChange={setLang}
-          onNext={() => goto("chunk")}
+          onNext={() => gotoFlow("chunk")}
         />
       )}
-      {step === "chunk" && (
+      {flowStep === "chunk" && (
         <ChunkStep
           verse={verse}
           lang={lang}
           onLangChange={setLang}
-          onNext={() => goto("game")}
-          onBack={() => goto("song")}
+          onNext={() => gotoFlow("game")}
+          onBack={() => gotoFlow("song")}
         />
       )}
-      {step === "game" && (
+      {flowStep === "game" && (
         <GameStep
           verse={verse}
           lang={lang}
           onLangChange={setLang}
-          onBack={() => goto("chunk")}
-          onComplete={(earned) => {
-            setStars(earned);
-            goto("prayer");
-          }}
+          onBack={() => gotoFlow("chunk")}
+          onComplete={handleGameComplete}
         />
       )}
-      {step === "prayer" && (
+      {flowStep === "prayer" && (
         <PrayerStep
           verse={verse}
           lang={lang}
           onLangChange={setLang}
-          onNext={() => goto("done")}
-          onBack={() => goto("game")}
+          onNext={handlePrayerDone}
+          onBack={() => gotoFlow("game")}
         />
       )}
-      {step === "done" && (
-        <DoneStep verse={verse} stars={stars} onRestart={restart} />
+      {flowStep === "done" && (
+        <DoneStep
+          verse={verse}
+          stars={stars}
+          streak={save.streak}
+          onHome={handleHome}
+        />
       )}
     </main>
   );
