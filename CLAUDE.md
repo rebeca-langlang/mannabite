@@ -28,6 +28,17 @@
 - 터치 타겟 최소 48px (아이 손가락)
 - xl: 브레이크포인트로 태블릿은 모바일 레이아웃 유지
 
+## 하네스: 구절 콘텐츠 제작
+
+**목표:** 성경 구절을 한/영 학습 데이터로 작성→검수→코드통합까지 일관된 품질로 완성한다.
+
+**트리거:** 구절 추가·수정·검수·통합 등 구절 콘텐츠 작업 요청 시 `verse-content-pipeline` 스킬을 사용하라. 단순 질문은 직접 응답 가능.
+
+**변경 이력:**
+| 날짜 | 변경 내용 | 대상 | 사유 |
+|------|----------|------|------|
+| 2026-05-28 | 초기 구성 (verse-author, content-reviewer, code-integrator 3인 팀) | 전체 | 구절 콘텐츠 제작 파이프라인 구축 |
+
 Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-specific instructions as needed.
 
 **Tradeoff:** These guidelines bias toward caution over speed. For trivial tasks, use judgment.
