@@ -1,60 +1,194 @@
 {
-  "version": "1.0",
+  "version": "1.3",
+  "avatars": [
+    {
+      "id": "boy",
+      "nameKo": "남자아이",
+      "type": "person",
+      "emoji": "👦",
+      "image": "/img/avatars/boy.png"
+    },
+    {
+      "id": "girl",
+      "nameKo": "여자아이",
+      "type": "person",
+      "emoji": "👧",
+      "image": "/img/avatars/girl.png"
+    },
+    {
+      "id": "lamb",
+      "nameKo": "양",
+      "type": "animal",
+      "emoji": "🐑",
+      "image": "/img/avatars/lamb.png"
+    },
+    {
+      "id": "lion",
+      "nameKo": "사자",
+      "type": "animal",
+      "emoji": "🦁",
+      "image": "/img/avatars/lion.png"
+    },
+    {
+      "id": "dove",
+      "nameKo": "비둘기",
+      "type": "animal",
+      "emoji": "🕊️",
+      "image": "/img/avatars/dove.png"
+    },
+    {
+      "id": "rabbit",
+      "nameKo": "토끼",
+      "type": "animal",
+      "emoji": "🐰",
+      "image": "/img/avatars/rabbit.png"
+    }
+  ],
+  "characters": [
+    {
+      "id": "david",
+      "nameKo": "다윗",
+      "stages": [
+        {
+          "stage": 1,
+          "nameKo": "목동 소년 다윗",
+          "dayFrom": 1,
+          "image": "/img/characters/david/stage1.png"
+        },
+        {
+          "stage": 2,
+          "nameKo": "청년 다윗",
+          "dayFrom": 4,
+          "image": "/img/characters/david/stage2.png"
+        },
+        {
+          "stage": 3,
+          "nameKo": "왕 다윗",
+          "dayFrom": 8,
+          "image": "/img/characters/david/stage3.png"
+        }
+      ],
+      "itemsAreDraft": true,
+      "items": [
+        {
+          "slot": 1,
+          "nameKo": "양",
+          "emoji": "🐑",
+          "icon": "/img/characters/david/item01.png",
+          "reference": "삼상 16:11"
+        },
+        {
+          "slot": 2,
+          "nameKo": "목동 지팡이",
+          "emoji": "🦯",
+          "icon": "/img/characters/david/item02.png",
+          "reference": ""
+        },
+        {
+          "slot": 3,
+          "nameKo": "수금",
+          "emoji": "🎵",
+          "icon": "/img/characters/david/item03.png",
+          "reference": "삼상 16:23"
+        },
+        {
+          "slot": 4,
+          "nameKo": "물맷돌",
+          "emoji": "🪨",
+          "icon": "/img/characters/david/item04.png",
+          "reference": "삼상 17:40"
+        },
+        {
+          "slot": 5,
+          "nameKo": "기름병",
+          "emoji": "🫙",
+          "icon": "/img/characters/david/item05.png",
+          "reference": "삼상 16:13"
+        },
+        {
+          "slot": 6,
+          "nameKo": "친구 요나단",
+          "emoji": "🤝",
+          "icon": "/img/characters/david/item06.png",
+          "reference": "삼상 18:1"
+        },
+        {
+          "slot": 7,
+          "nameKo": "방패",
+          "emoji": "🛡️",
+          "icon": "/img/characters/david/item07.png",
+          "reference": ""
+        },
+        {
+          "slot": 8,
+          "nameKo": "시편 두루마리",
+          "emoji": "📜",
+          "icon": "/img/characters/david/item08.png",
+          "reference": ""
+        },
+        {
+          "slot": 9,
+          "nameKo": "법궤",
+          "emoji": "📦",
+          "icon": "/img/characters/david/item09.png",
+          "reference": "삼하 6"
+        },
+        {
+          "slot": 10,
+          "nameKo": "왕관",
+          "emoji": "👑",
+          "icon": "/img/characters/david/item10.png",
+          "reference": ""
+        }
+      ]
+    }
+  ],
   "plan": {
-    "id": "30day-plan-1",
-    "title": "My First 30 Days",
-    "titleKo": "나의 첫 30일",
-    "totalDays": 30,
+    "id": "10day-david-1",
+    "title": "David: My First 10 Days",
+    "titleKo": "다윗과 함께하는 첫 10일",
+    "totalDays": 10,
+    "characterId": "david",
     "verses": [
       {
         "id": "psalm-56-3",
-        "dayStart": 1,
-        "dayEnd": 3
+        "day": 1
       },
       {
         "id": "philippians-4-4",
-        "dayStart": 4,
-        "dayEnd": 6
+        "day": 2
       },
       {
         "id": "psalm-150-6",
-        "dayStart": 7,
-        "dayEnd": 9
+        "day": 3
       },
       {
         "id": "psalm-118-24",
-        "dayStart": 10,
-        "dayEnd": 12
+        "day": 4
       },
       {
         "id": "psalm-136-1",
-        "dayStart": 13,
-        "dayEnd": 15
+        "day": 5
       },
       {
         "id": "philippians-4-13",
-        "dayStart": 16,
-        "dayEnd": 18
+        "day": 6
       },
       {
         "id": "luke-6-31",
-        "dayStart": 19,
-        "dayEnd": 21
+        "day": 7
       },
       {
         "id": "colossians-3-20",
-        "dayStart": 22,
-        "dayEnd": 24
+        "day": 8
       },
       {
         "id": "psalm-119-105",
-        "dayStart": 25,
-        "dayEnd": 27
+        "day": 9
       },
       {
         "id": "proverbs-3-5",
-        "dayStart": 28,
-        "dayEnd": 30
+        "day": 10
       }
     ]
   },
@@ -83,12 +217,10 @@
           "translation": "WEB"
         }
       },
-
       "song": {
         "ko": "/audio/songs/psalm-56-3-ko.mp3",
         "en": "/audio/songs/psalm-56-3-en.mp3"
       },
-
       "imageAssociation": {
         "sequence": [
           {
@@ -115,7 +247,6 @@
           "ko": "무서울 때, 하나님을 믿으면 마음이 편해져요!"
         }
       },
-
       "chunks": {
         "ko": [
           "내가 두려워하는 날에는",
@@ -126,28 +257,57 @@
           "I will put my trust in you."
         ]
       },
-
       "games": {
         "fillInBlank": {
           "ko": {
-            "template": "{blank} 날에는 주를 {blank} 하리이다",
+            "template": "{blank} 날에는 주를 {blank}하리이다",
             "blanks": [
               {
                 "answer": "두려워하는",
                 "answerEmoji": "😨",
                 "options": [
-                  { "emoji": "😨", "label": "afraid", "labelKo": "두려워하는", "correct": true },
-                  { "emoji": "😊", "label": "happy", "labelKo": "기쁜", "correct": false },
-                  { "emoji": "😡", "label": "angry", "labelKo": "화나는", "correct": false }
+                  {
+                    "emoji": "😨",
+                    "label": "afraid",
+                    "labelKo": "두려워하는",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "😊",
+                    "label": "happy",
+                    "labelKo": "기쁜",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "😡",
+                    "label": "angry",
+                    "labelKo": "화나는",
+                    "correct": false
+                  }
                 ]
               },
               {
                 "answer": "의지",
                 "answerEmoji": "🙏",
                 "options": [
-                  { "emoji": "🙏", "label": "trust", "labelKo": "의지", "correct": true },
-                  { "emoji": "💪", "label": "strong", "labelKo": "강한", "correct": false },
-                  { "emoji": "🏃", "label": "run", "labelKo": "도망", "correct": false }
+                  {
+                    "emoji": "🙏",
+                    "label": "trust",
+                    "labelKo": "의지",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "💪",
+                    "label": "strong",
+                    "labelKo": "강한",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "🏃",
+                    "label": "run",
+                    "labelKo": "도망",
+                    "correct": false
+                  }
                 ]
               }
             ]
@@ -159,18 +319,42 @@
                 "answer": "afraid",
                 "answerEmoji": "😨",
                 "options": [
-                  { "emoji": "😨", "label": "afraid", "correct": true },
-                  { "emoji": "😊", "label": "happy", "correct": false },
-                  { "emoji": "😡", "label": "angry", "correct": false }
+                  {
+                    "emoji": "😨",
+                    "label": "afraid",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "😊",
+                    "label": "happy",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "😡",
+                    "label": "angry",
+                    "correct": false
+                  }
                 ]
               },
               {
                 "answer": "trust",
                 "answerEmoji": "🙏",
                 "options": [
-                  { "emoji": "🙏", "label": "trust", "correct": true },
-                  { "emoji": "💪", "label": "strength", "correct": false },
-                  { "emoji": "🏃", "label": "run away", "correct": false }
+                  {
+                    "emoji": "🙏",
+                    "label": "trust",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "💪",
+                    "label": "strength",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "🏃",
+                    "label": "run away",
+                    "correct": false
+                  }
                 ]
               }
             ]
@@ -178,16 +362,33 @@
         },
         "firstLetter": {
           "ko": [
-            { "word": "두려워하는", "hint": "ㄷ____" },
-            { "word": "의지", "hint": "ㅇ_" }
+            {
+              "word": "두려워하는",
+              "hint": "ㄷ____"
+            },
+            {
+              "word": "의지",
+              "hint": "ㅇ_"
+            }
           ],
           "en": [
-            { "word": "afraid", "hint": "a_____" },
-            { "word": "trust", "hint": "t____" }
+            {
+              "word": "afraid",
+              "hint": "a_____"
+            },
+            {
+              "word": "trust",
+              "hint": "t____"
+            }
           ]
         }
       },
-
+      "prayer": {
+        "ko": "하나님, 무서울 때에 하나님을 의지할게요. 아멘.",
+        "en": "God, when I am afraid, I will trust in you. Amen.",
+        "audioKo": "/audio/tts/psalm-56-3-prayer-ko.mp3",
+        "audioEn": "/audio/tts/psalm-56-3-prayer-en.mp3"
+      },
       "tts": {
         "ko": "/audio/tts/psalm-56-3-ko.mp3",
         "en": "/audio/tts/psalm-56-3-en.mp3",
@@ -201,7 +402,6 @@
         ]
       }
     },
-
     {
       "id": "philippians-4-4",
       "reference": {
@@ -232,10 +432,30 @@
       },
       "imageAssociation": {
         "sequence": [
-          { "emoji": "🎉", "keyword": "rejoice", "keywordKo": "기뻐하라", "label": "rejoice" },
-          { "emoji": "😄", "keyword": "always", "keywordKo": "항상", "label": "always" },
-          { "emoji": "🔁", "keyword": "again", "keywordKo": "다시", "label": "again" },
-          { "emoji": "😄", "keyword": "rejoice!", "keywordKo": "기뻐하라!", "label": "rejoice!" }
+          {
+            "emoji": "🎉",
+            "keyword": "rejoice",
+            "keywordKo": "기뻐하라",
+            "label": "rejoice"
+          },
+          {
+            "emoji": "😄",
+            "keyword": "always",
+            "keywordKo": "항상",
+            "label": "always"
+          },
+          {
+            "emoji": "🔁",
+            "keyword": "again",
+            "keywordKo": "다시",
+            "label": "again"
+          },
+          {
+            "emoji": "😄",
+            "keyword": "rejoice!",
+            "keywordKo": "기뻐하라!",
+            "label": "rejoice!"
+          }
         ],
         "simpleExplanation": {
           "en": "Be happy with God, always! Let's say it again — be happy!",
@@ -263,18 +483,48 @@
                 "answer": "기뻐하라",
                 "answerEmoji": "🎉",
                 "options": [
-                  { "emoji": "🎉", "label": "rejoice", "labelKo": "기뻐하라", "correct": true },
-                  { "emoji": "😢", "label": "cry", "labelKo": "울어라", "correct": false },
-                  { "emoji": "😴", "label": "sleep", "labelKo": "자라", "correct": false }
+                  {
+                    "emoji": "🎉",
+                    "label": "rejoice",
+                    "labelKo": "기뻐하라",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "😢",
+                    "label": "cry",
+                    "labelKo": "울어라",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "😴",
+                    "label": "sleep",
+                    "labelKo": "자라",
+                    "correct": false
+                  }
                 ]
               },
               {
                 "answer": "기뻐하라",
                 "answerEmoji": "😄",
                 "options": [
-                  { "emoji": "😄", "label": "rejoice!", "labelKo": "기뻐하라!", "correct": true },
-                  { "emoji": "😠", "label": "be angry", "labelKo": "화내라", "correct": false },
-                  { "emoji": "🤫", "label": "be quiet", "labelKo": "조용히 해라", "correct": false }
+                  {
+                    "emoji": "😄",
+                    "label": "rejoice!",
+                    "labelKo": "기뻐하라!",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "😠",
+                    "label": "be angry",
+                    "labelKo": "화내라",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "🤫",
+                    "label": "be quiet",
+                    "labelKo": "조용히 해라",
+                    "correct": false
+                  }
                 ]
               }
             ]
@@ -286,18 +536,42 @@
                 "answer": "Rejoice",
                 "answerEmoji": "🎉",
                 "options": [
-                  { "emoji": "🎉", "label": "Rejoice", "correct": true },
-                  { "emoji": "😢", "label": "Cry", "correct": false },
-                  { "emoji": "😴", "label": "Sleep", "correct": false }
+                  {
+                    "emoji": "🎉",
+                    "label": "Rejoice",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "😢",
+                    "label": "Cry",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "😴",
+                    "label": "Sleep",
+                    "correct": false
+                  }
                 ]
               },
               {
                 "answer": "Rejoice",
                 "answerEmoji": "😄",
                 "options": [
-                  { "emoji": "😄", "label": "Rejoice", "correct": true },
-                  { "emoji": "😠", "label": "Complain", "correct": false },
-                  { "emoji": "🤫", "label": "Be quiet", "correct": false }
+                  {
+                    "emoji": "😄",
+                    "label": "Rejoice",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "😠",
+                    "label": "Complain",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "🤫",
+                    "label": "Be quiet",
+                    "correct": false
+                  }
                 ]
               }
             ]
@@ -305,14 +579,32 @@
         },
         "firstLetter": {
           "ko": [
-            { "word": "기뻐하라", "hint": "ㄱ___" },
-            { "word": "항상", "hint": "ㅎ_" }
+            {
+              "word": "기뻐하라",
+              "hint": "ㄱ___"
+            },
+            {
+              "word": "항상",
+              "hint": "ㅎ_"
+            }
           ],
           "en": [
-            { "word": "Rejoice", "hint": "R______" },
-            { "word": "always", "hint": "a_____" }
+            {
+              "word": "Rejoice",
+              "hint": "R______"
+            },
+            {
+              "word": "always",
+              "hint": "a_____"
+            }
           ]
         }
+      },
+      "prayer": {
+        "ko": "하나님, 언제나 기뻐하는 마음을 주세요. 아멘.",
+        "en": "God, give me a joyful heart always. Amen.",
+        "audioKo": "/audio/tts/philippians-4-4-prayer-ko.mp3",
+        "audioEn": "/audio/tts/philippians-4-4-prayer-en.mp3"
       },
       "tts": {
         "ko": "/audio/tts/philippians-4-4-ko.mp3",
@@ -326,6 +618,1736 @@
           "/audio/tts/philippians-4-4-chunk-1-en.mp3",
           "/audio/tts/philippians-4-4-chunk-2-en.mp3",
           "/audio/tts/philippians-4-4-chunk-3-en.mp3"
+        ]
+      }
+    },
+    {
+      "id": "psalm-150-6",
+      "reference": {
+        "book": "Psalm",
+        "bookKo": "시편",
+        "chapter": 150,
+        "verse": 6,
+        "display": "Psalm 150:6",
+        "displayKo": "시편 150:6"
+      },
+      "theme": {
+        "en": "Praise",
+        "ko": "찬양"
+      },
+      "text": {
+        "ko": {
+          "full": "호흡이 있는 자마다 여호와를 찬양할찌어다 할렐루야",
+          "translation": "개역한글"
+        },
+        "en": {
+          "full": "Let everything that has breath praise the LORD! Hallelujah!",
+          "translation": "WEB"
+        }
+      },
+      "song": {
+        "ko": "/audio/songs/psalm-150-6-ko.mp3",
+        "en": "/audio/songs/psalm-150-6-en.mp3"
+      },
+      "imageAssociation": {
+        "sequence": [
+          {
+            "emoji": "🌬️",
+            "keyword": "breath",
+            "keywordKo": "호흡",
+            "label": "breath"
+          },
+          {
+            "emoji": "🎵",
+            "keyword": "praise",
+            "keywordKo": "찬양",
+            "label": "praise"
+          },
+          {
+            "emoji": "🙌",
+            "keyword": "LORD",
+            "keywordKo": "여호와",
+            "label": "LORD"
+          },
+          {
+            "emoji": "🎉",
+            "keyword": "hallelujah",
+            "keywordKo": "할렐루야",
+            "label": "hallelujah"
+          }
+        ],
+        "simpleExplanation": {
+          "en": "Everyone who breathes, praise God! Hallelujah!",
+          "ko": "숨 쉬는 모든 사람이 하나님을 찬양해요! 할렐루야!"
+        }
+      },
+      "chunks": {
+        "ko": [
+          "호흡이 있는 자마다",
+          "여호와를 찬양할찌어다",
+          "할렐루야"
+        ],
+        "en": [
+          "Let everything that has breath",
+          "praise the LORD!",
+          "Hallelujah!"
+        ]
+      },
+      "games": {
+        "fillInBlank": {
+          "ko": {
+            "template": "호흡이 있는 자마다 여호와를 {blank}할찌어다 {blank}",
+            "blanks": [
+              {
+                "answer": "찬양",
+                "answerEmoji": "🎵",
+                "options": [
+                  {
+                    "emoji": "🎵",
+                    "label": "praise",
+                    "labelKo": "찬양",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "😴",
+                    "label": "sleep",
+                    "labelKo": "잠자",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "🍽️",
+                    "label": "eat",
+                    "labelKo": "먹",
+                    "correct": false
+                  }
+                ]
+              },
+              {
+                "answer": "할렐루야",
+                "answerEmoji": "🎉",
+                "options": [
+                  {
+                    "emoji": "🎉",
+                    "label": "hallelujah",
+                    "labelKo": "할렐루야",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "👋",
+                    "label": "bye",
+                    "labelKo": "안녕",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "🤐",
+                    "label": "quiet",
+                    "labelKo": "쉿",
+                    "correct": false
+                  }
+                ]
+              }
+            ]
+          },
+          "en": {
+            "template": "Let everything that has breath {blank} the LORD! {blank}!",
+            "blanks": [
+              {
+                "answer": "praise",
+                "answerEmoji": "🎵",
+                "options": [
+                  {
+                    "emoji": "🎵",
+                    "label": "praise",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "😴",
+                    "label": "sleep",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "🍽️",
+                    "label": "eat",
+                    "correct": false
+                  }
+                ]
+              },
+              {
+                "answer": "Hallelujah",
+                "answerEmoji": "🎉",
+                "options": [
+                  {
+                    "emoji": "🎉",
+                    "label": "Hallelujah",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "👋",
+                    "label": "Goodbye",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "🤐",
+                    "label": "Quiet",
+                    "correct": false
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "firstLetter": {
+          "ko": [
+            {
+              "word": "찬양",
+              "hint": "ㅊ_"
+            },
+            {
+              "word": "할렐루야",
+              "hint": "ㅎ____"
+            }
+          ],
+          "en": [
+            {
+              "word": "praise",
+              "hint": "p_____"
+            },
+            {
+              "word": "Hallelujah",
+              "hint": "H________"
+            }
+          ]
+        }
+      },
+      "prayer": {
+        "ko": "하나님, 숨 쉴 때마다 하나님을 찬양해요. 할렐루야! 아멘.",
+        "en": "God, with every breath I praise you. Hallelujah! Amen.",
+        "audioKo": "/audio/tts/psalm-150-6-prayer-ko.mp3",
+        "audioEn": "/audio/tts/psalm-150-6-prayer-en.mp3"
+      },
+      "tts": {
+        "ko": "/audio/tts/psalm-150-6-ko.mp3",
+        "en": "/audio/tts/psalm-150-6-en.mp3",
+        "chunksKo": [
+          "/audio/tts/psalm-150-6-chunk-1-ko.mp3",
+          "/audio/tts/psalm-150-6-chunk-2-ko.mp3",
+          "/audio/tts/psalm-150-6-chunk-3-ko.mp3"
+        ],
+        "chunksEn": [
+          "/audio/tts/psalm-150-6-chunk-1-en.mp3",
+          "/audio/tts/psalm-150-6-chunk-2-en.mp3",
+          "/audio/tts/psalm-150-6-chunk-3-en.mp3"
+        ]
+      }
+    },
+    {
+      "id": "psalm-118-24",
+      "reference": {
+        "book": "Psalm",
+        "bookKo": "시편",
+        "chapter": 118,
+        "verse": 24,
+        "display": "Psalm 118:24",
+        "displayKo": "시편 118:24"
+      },
+      "theme": {
+        "en": "Joy each day",
+        "ko": "매일의 기쁨"
+      },
+      "text": {
+        "ko": {
+          "full": "이 날은 여호와의 정하신 것이라 이 날에 우리가 즐거워하고 기뻐하리로다",
+          "translation": "개역한글"
+        },
+        "en": {
+          "full": "This is the day that the LORD has made. We will rejoice and be glad in it!",
+          "translation": "WEB"
+        }
+      },
+      "song": {
+        "ko": "/audio/songs/psalm-118-24-ko.mp3",
+        "en": "/audio/songs/psalm-118-24-en.mp3"
+      },
+      "imageAssociation": {
+        "sequence": [
+          {
+            "emoji": "☀️",
+            "keyword": "day",
+            "keywordKo": "날",
+            "label": "day"
+          },
+          {
+            "emoji": "🎁",
+            "keyword": "made",
+            "keywordKo": "정하신",
+            "label": "made"
+          },
+          {
+            "emoji": "🥳",
+            "keyword": "rejoice",
+            "keywordKo": "즐거워하고",
+            "label": "rejoice"
+          },
+          {
+            "emoji": "🎶",
+            "keyword": "glad",
+            "keywordKo": "기뻐하리로다",
+            "label": "glad"
+          }
+        ],
+        "simpleExplanation": {
+          "en": "God made today! Let's be happy and glad!",
+          "ko": "하나님이 오늘을 만드셨어요! 즐겁고 기쁘게 보내요!"
+        }
+      },
+      "chunks": {
+        "ko": [
+          "이 날은 여호와의 정하신 것이라",
+          "이 날에 우리가",
+          "즐거워하고 기뻐하리로다"
+        ],
+        "en": [
+          "This is the day that the LORD has made.",
+          "We will rejoice",
+          "and be glad in it!"
+        ]
+      },
+      "games": {
+        "fillInBlank": {
+          "ko": {
+            "template": "이 {blank}은 여호와의 정하신 것이라 이 날에 우리가 즐거워하고 {blank}하리로다",
+            "blanks": [
+              {
+                "answer": "날",
+                "answerEmoji": "☀️",
+                "options": [
+                  {
+                    "emoji": "☀️",
+                    "label": "day",
+                    "labelKo": "날",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "🌙",
+                    "label": "night",
+                    "labelKo": "밤",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "⭐",
+                    "label": "star",
+                    "labelKo": "별",
+                    "correct": false
+                  }
+                ]
+              },
+              {
+                "answer": "기뻐",
+                "answerEmoji": "🥳",
+                "options": [
+                  {
+                    "emoji": "🥳",
+                    "label": "rejoice",
+                    "labelKo": "기뻐",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "😭",
+                    "label": "cry",
+                    "labelKo": "울",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "😤",
+                    "label": "angry",
+                    "labelKo": "화",
+                    "correct": false
+                  }
+                ]
+              }
+            ]
+          },
+          "en": {
+            "template": "This is the {blank} that the LORD has made. We will rejoice and be {blank} in it!",
+            "blanks": [
+              {
+                "answer": "day",
+                "answerEmoji": "☀️",
+                "options": [
+                  {
+                    "emoji": "☀️",
+                    "label": "day",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "🌙",
+                    "label": "night",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "⭐",
+                    "label": "star",
+                    "correct": false
+                  }
+                ]
+              },
+              {
+                "answer": "glad",
+                "answerEmoji": "🥳",
+                "options": [
+                  {
+                    "emoji": "🥳",
+                    "label": "glad",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "😭",
+                    "label": "sad",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "😤",
+                    "label": "mad",
+                    "correct": false
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "firstLetter": {
+          "ko": [
+            {
+              "word": "날",
+              "hint": "ㄴ"
+            },
+            {
+              "word": "기뻐",
+              "hint": "ㄱ_"
+            }
+          ],
+          "en": [
+            {
+              "word": "day",
+              "hint": "d__"
+            },
+            {
+              "word": "glad",
+              "hint": "g___"
+            }
+          ]
+        }
+      },
+      "prayer": {
+        "ko": "하나님, 오늘 하루를 주셔서 감사해요. 즐겁게 지낼게요. 아멘.",
+        "en": "God, thank you for this day. I will be glad in it. Amen.",
+        "audioKo": "/audio/tts/psalm-118-24-prayer-ko.mp3",
+        "audioEn": "/audio/tts/psalm-118-24-prayer-en.mp3"
+      },
+      "tts": {
+        "ko": "/audio/tts/psalm-118-24-ko.mp3",
+        "en": "/audio/tts/psalm-118-24-en.mp3",
+        "chunksKo": [
+          "/audio/tts/psalm-118-24-chunk-1-ko.mp3",
+          "/audio/tts/psalm-118-24-chunk-2-ko.mp3",
+          "/audio/tts/psalm-118-24-chunk-3-ko.mp3"
+        ],
+        "chunksEn": [
+          "/audio/tts/psalm-118-24-chunk-1-en.mp3",
+          "/audio/tts/psalm-118-24-chunk-2-en.mp3",
+          "/audio/tts/psalm-118-24-chunk-3-en.mp3"
+        ]
+      }
+    },
+    {
+      "id": "psalm-136-1",
+      "reference": {
+        "book": "Psalm",
+        "bookKo": "시편",
+        "chapter": 136,
+        "verse": 1,
+        "display": "Psalm 136:1",
+        "displayKo": "시편 136:1"
+      },
+      "theme": {
+        "en": "Thankfulness",
+        "ko": "감사"
+      },
+      "text": {
+        "ko": {
+          "full": "여호와께 감사하라 그는 선하시며 그 인자하심이 영원함이로다",
+          "translation": "개역한글"
+        },
+        "en": {
+          "full": "Give thanks to the LORD, for he is good, for his loving kindness endures forever.",
+          "translation": "WEB"
+        }
+      },
+      "song": {
+        "ko": "/audio/songs/psalm-136-1-ko.mp3",
+        "en": "/audio/songs/psalm-136-1-en.mp3"
+      },
+      "imageAssociation": {
+        "sequence": [
+          {
+            "emoji": "🙏",
+            "keyword": "thanks",
+            "keywordKo": "감사",
+            "label": "thanks"
+          },
+          {
+            "emoji": "❤️",
+            "keyword": "good",
+            "keywordKo": "선하시며",
+            "label": "good"
+          },
+          {
+            "emoji": "♾️",
+            "keyword": "forever",
+            "keywordKo": "영원",
+            "label": "forever"
+          }
+        ],
+        "simpleExplanation": {
+          "en": "Thank God! He is good, and His love lasts forever!",
+          "ko": "하나님께 감사해요! 하나님은 좋으시고, 사랑은 영원해요!"
+        }
+      },
+      "chunks": {
+        "ko": [
+          "여호와께 감사하라",
+          "그는 선하시며",
+          "그 인자하심이 영원함이로다"
+        ],
+        "en": [
+          "Give thanks to the LORD,",
+          "for he is good,",
+          "for his loving kindness endures forever."
+        ]
+      },
+      "games": {
+        "fillInBlank": {
+          "ko": {
+            "template": "여호와께 {blank}하라 그는 {blank}하시며 그 인자하심이 영원함이로다",
+            "blanks": [
+              {
+                "answer": "감사",
+                "answerEmoji": "🙏",
+                "options": [
+                  {
+                    "emoji": "🙏",
+                    "label": "thanks",
+                    "labelKo": "감사",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "😮",
+                    "label": "surprise",
+                    "labelKo": "놀라",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "😴",
+                    "label": "sleep",
+                    "labelKo": "잠자",
+                    "correct": false
+                  }
+                ]
+              },
+              {
+                "answer": "선",
+                "answerEmoji": "❤️",
+                "options": [
+                  {
+                    "emoji": "❤️",
+                    "label": "good",
+                    "labelKo": "선",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "💢",
+                    "label": "mean",
+                    "labelKo": "나쁘",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "🥶",
+                    "label": "cold",
+                    "labelKo": "차가",
+                    "correct": false
+                  }
+                ]
+              }
+            ]
+          },
+          "en": {
+            "template": "Give {blank} to the LORD, for he is {blank}, for his loving kindness endures forever.",
+            "blanks": [
+              {
+                "answer": "thanks",
+                "answerEmoji": "🙏",
+                "options": [
+                  {
+                    "emoji": "🙏",
+                    "label": "thanks",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "😮",
+                    "label": "surprise",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "😴",
+                    "label": "sleep",
+                    "correct": false
+                  }
+                ]
+              },
+              {
+                "answer": "good",
+                "answerEmoji": "❤️",
+                "options": [
+                  {
+                    "emoji": "❤️",
+                    "label": "good",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "💢",
+                    "label": "mean",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "🥶",
+                    "label": "cold",
+                    "correct": false
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "firstLetter": {
+          "ko": [
+            {
+              "word": "감사",
+              "hint": "ㄱ_"
+            },
+            {
+              "word": "선",
+              "hint": "ㅅ"
+            }
+          ],
+          "en": [
+            {
+              "word": "thanks",
+              "hint": "t____"
+            },
+            {
+              "word": "good",
+              "hint": "g___"
+            }
+          ]
+        }
+      },
+      "prayer": {
+        "ko": "하나님, 좋으신 하나님께 감사해요. 사랑해 주셔서 감사해요. 아멘.",
+        "en": "God, thank you for being good. Thank you for your love. Amen.",
+        "audioKo": "/audio/tts/psalm-136-1-prayer-ko.mp3",
+        "audioEn": "/audio/tts/psalm-136-1-prayer-en.mp3"
+      },
+      "tts": {
+        "ko": "/audio/tts/psalm-136-1-ko.mp3",
+        "en": "/audio/tts/psalm-136-1-en.mp3",
+        "chunksKo": [
+          "/audio/tts/psalm-136-1-chunk-1-ko.mp3",
+          "/audio/tts/psalm-136-1-chunk-2-ko.mp3",
+          "/audio/tts/psalm-136-1-chunk-3-ko.mp3"
+        ],
+        "chunksEn": [
+          "/audio/tts/psalm-136-1-chunk-1-en.mp3",
+          "/audio/tts/psalm-136-1-chunk-2-en.mp3",
+          "/audio/tts/psalm-136-1-chunk-3-en.mp3"
+        ]
+      }
+    },
+    {
+      "id": "philippians-4-13",
+      "reference": {
+        "book": "Philippians",
+        "bookKo": "빌립보서",
+        "chapter": 4,
+        "verse": 13,
+        "display": "Philippians 4:13",
+        "displayKo": "빌립보서 4:13"
+      },
+      "theme": {
+        "en": "Courage",
+        "ko": "용기"
+      },
+      "text": {
+        "ko": {
+          "full": "내게 능력주시는 자 안에서 내가 모든 것을 할 수 있느니라",
+          "translation": "개역한글"
+        },
+        "en": {
+          "full": "I can do all things through Christ who strengthens me.",
+          "translation": "WEB"
+        }
+      },
+      "song": {
+        "ko": "/audio/songs/philippians-4-13-ko.mp3",
+        "en": "/audio/songs/philippians-4-13-en.mp3"
+      },
+      "imageAssociation": {
+        "sequence": [
+          {
+            "emoji": "💪",
+            "keyword": "strength",
+            "keywordKo": "능력",
+            "label": "strength"
+          },
+          {
+            "emoji": "✝️",
+            "keyword": "Christ",
+            "keywordKo": "그리스도",
+            "label": "Christ"
+          },
+          {
+            "emoji": "🌟",
+            "keyword": "all things",
+            "keywordKo": "모든 것",
+            "label": "all things"
+          },
+          {
+            "emoji": "🏆",
+            "keyword": "can do",
+            "keywordKo": "할 수 있다",
+            "label": "can do"
+          }
+        ],
+        "simpleExplanation": {
+          "en": "With God's strength, I can do all things!",
+          "ko": "하나님이 힘을 주시면, 나는 무엇이든 할 수 있어요!"
+        }
+      },
+      "chunks": {
+        "ko": [
+          "내게 능력주시는 자 안에서",
+          "내가 모든 것을 할 수 있느니라"
+        ],
+        "en": [
+          "I can do all things",
+          "through Christ who strengthens me."
+        ]
+      },
+      "games": {
+        "fillInBlank": {
+          "ko": {
+            "template": "내게 {blank} 주시는 자 안에서 내가 {blank}을 할 수 있느니라",
+            "blanks": [
+              {
+                "answer": "능력",
+                "answerEmoji": "💪",
+                "options": [
+                  {
+                    "emoji": "💪",
+                    "label": "strength",
+                    "labelKo": "능력",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "😴",
+                    "label": "sleep",
+                    "labelKo": "잠",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "🍬",
+                    "label": "candy",
+                    "labelKo": "사탕",
+                    "correct": false
+                  }
+                ]
+              },
+              {
+                "answer": "모든 것",
+                "answerEmoji": "🌟",
+                "options": [
+                  {
+                    "emoji": "🌟",
+                    "label": "all things",
+                    "labelKo": "모든 것",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "🙅",
+                    "label": "nothing",
+                    "labelKo": "아무것도",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "1️⃣",
+                    "label": "one thing",
+                    "labelKo": "한 가지",
+                    "correct": false
+                  }
+                ]
+              }
+            ]
+          },
+          "en": {
+            "template": "I can do {blank} through Christ who {blank} me.",
+            "blanks": [
+              {
+                "answer": "all things",
+                "answerEmoji": "🌟",
+                "options": [
+                  {
+                    "emoji": "🌟",
+                    "label": "all things",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "🙅",
+                    "label": "nothing",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "1️⃣",
+                    "label": "one thing",
+                    "correct": false
+                  }
+                ]
+              },
+              {
+                "answer": "strengthens",
+                "answerEmoji": "💪",
+                "options": [
+                  {
+                    "emoji": "💪",
+                    "label": "strengthens",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "😴",
+                    "label": "tires",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "🥶",
+                    "label": "freezes",
+                    "correct": false
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "firstLetter": {
+          "ko": [
+            {
+              "word": "능력",
+              "hint": "ㄴ_"
+            },
+            {
+              "word": "모든",
+              "hint": "ㅁ_"
+            }
+          ],
+          "en": [
+            {
+              "word": "all",
+              "hint": "a__"
+            },
+            {
+              "word": "strengthens",
+              "hint": "s_________"
+            }
+          ]
+        }
+      },
+      "prayer": {
+        "ko": "하나님, 힘을 주셔서 무엇이든 할 수 있어요. 아멘.",
+        "en": "God, you give me strength to do all things. Amen.",
+        "audioKo": "/audio/tts/philippians-4-13-prayer-ko.mp3",
+        "audioEn": "/audio/tts/philippians-4-13-prayer-en.mp3"
+      },
+      "tts": {
+        "ko": "/audio/tts/philippians-4-13-ko.mp3",
+        "en": "/audio/tts/philippians-4-13-en.mp3",
+        "chunksKo": [
+          "/audio/tts/philippians-4-13-chunk-1-ko.mp3",
+          "/audio/tts/philippians-4-13-chunk-2-ko.mp3"
+        ],
+        "chunksEn": [
+          "/audio/tts/philippians-4-13-chunk-1-en.mp3",
+          "/audio/tts/philippians-4-13-chunk-2-en.mp3"
+        ]
+      }
+    },
+    {
+      "id": "luke-6-31",
+      "reference": {
+        "book": "Luke",
+        "bookKo": "누가복음",
+        "chapter": 6,
+        "verse": 31,
+        "display": "Luke 6:31",
+        "displayKo": "누가복음 6:31"
+      },
+      "theme": {
+        "en": "Friendship",
+        "ko": "친구 관계"
+      },
+      "text": {
+        "ko": {
+          "full": "남에게 대접을 받고자 하는대로 너희도 남을 대접하라",
+          "translation": "개역한글"
+        },
+        "en": {
+          "full": "As you would like people to do to you, do exactly so to them.",
+          "translation": "WEB"
+        }
+      },
+      "song": {
+        "ko": "/audio/songs/luke-6-31-ko.mp3",
+        "en": "/audio/songs/luke-6-31-en.mp3"
+      },
+      "imageAssociation": {
+        "sequence": [
+          {
+            "emoji": "🤝",
+            "keyword": "treat",
+            "keywordKo": "대접",
+            "label": "treat"
+          },
+          {
+            "emoji": "❤️",
+            "keyword": "love",
+            "keywordKo": "사랑",
+            "label": "love"
+          },
+          {
+            "emoji": "👫",
+            "keyword": "others",
+            "keywordKo": "남",
+            "label": "others"
+          }
+        ],
+        "simpleExplanation": {
+          "en": "Treat others the way you want to be treated!",
+          "ko": "내가 받고 싶은 만큼, 친구에게도 똑같이 해줘요!"
+        }
+      },
+      "chunks": {
+        "ko": [
+          "남에게 대접을 받고자 하는대로",
+          "너희도 남을 대접하라"
+        ],
+        "en": [
+          "As you would like people to do to you,",
+          "do exactly so to them."
+        ]
+      },
+      "games": {
+        "fillInBlank": {
+          "ko": {
+            "template": "남에게 {blank}을 받고자 하는대로 너희도 남을 {blank}하라",
+            "blanks": [
+              {
+                "answer": "대접",
+                "answerEmoji": "🤝",
+                "options": [
+                  {
+                    "emoji": "🤝",
+                    "label": "treat",
+                    "labelKo": "대접",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "😡",
+                    "label": "fight",
+                    "labelKo": "싸움",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "🙈",
+                    "label": "ignore",
+                    "labelKo": "무시",
+                    "correct": false
+                  }
+                ]
+              },
+              {
+                "answer": "대접",
+                "answerEmoji": "❤️",
+                "options": [
+                  {
+                    "emoji": "❤️",
+                    "label": "treat kindly",
+                    "labelKo": "대접",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "😤",
+                    "label": "push",
+                    "labelKo": "밀치",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "👎",
+                    "label": "tease",
+                    "labelKo": "놀리",
+                    "correct": false
+                  }
+                ]
+              }
+            ]
+          },
+          "en": {
+            "template": "As you would {blank} people to do to you, {blank} exactly so to them.",
+            "blanks": [
+              {
+                "answer": "like",
+                "answerEmoji": "❤️",
+                "options": [
+                  {
+                    "emoji": "❤️",
+                    "label": "like",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "😡",
+                    "label": "hate",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "🙈",
+                    "label": "ignore",
+                    "correct": false
+                  }
+                ]
+              },
+              {
+                "answer": "do",
+                "answerEmoji": "🤝",
+                "options": [
+                  {
+                    "emoji": "🤝",
+                    "label": "do",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "😤",
+                    "label": "push",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "👎",
+                    "label": "tease",
+                    "correct": false
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "firstLetter": {
+          "ko": [
+            {
+              "word": "대접",
+              "hint": "ㄷ_"
+            }
+          ],
+          "en": [
+            {
+              "word": "like",
+              "hint": "l___"
+            },
+            {
+              "word": "do",
+              "hint": "d_"
+            }
+          ]
+        }
+      },
+      "prayer": {
+        "ko": "하나님, 친구를 사랑으로 대하게 해 주세요. 아멘.",
+        "en": "God, help me treat my friends with love. Amen.",
+        "audioKo": "/audio/tts/luke-6-31-prayer-ko.mp3",
+        "audioEn": "/audio/tts/luke-6-31-prayer-en.mp3"
+      },
+      "tts": {
+        "ko": "/audio/tts/luke-6-31-ko.mp3",
+        "en": "/audio/tts/luke-6-31-en.mp3",
+        "chunksKo": [
+          "/audio/tts/luke-6-31-chunk-1-ko.mp3",
+          "/audio/tts/luke-6-31-chunk-2-ko.mp3"
+        ],
+        "chunksEn": [
+          "/audio/tts/luke-6-31-chunk-1-en.mp3",
+          "/audio/tts/luke-6-31-chunk-2-en.mp3"
+        ]
+      }
+    },
+    {
+      "id": "colossians-3-20",
+      "reference": {
+        "book": "Colossians",
+        "bookKo": "골로새서",
+        "chapter": 3,
+        "verse": 20,
+        "display": "Colossians 3:20",
+        "displayKo": "골로새서 3:20"
+      },
+      "theme": {
+        "en": "Honoring parents",
+        "ko": "부모 공경"
+      },
+      "text": {
+        "ko": {
+          "full": "자녀들아 모든 일에 부모에게 순종하라 이는 주 안에서 기쁘게 하는 것이니라",
+          "translation": "개역한글"
+        },
+        "en": {
+          "full": "Children, obey your parents in all things, for this is well pleasing in the Lord.",
+          "translation": "WEB"
+        }
+      },
+      "song": {
+        "ko": "/audio/songs/colossians-3-20-ko.mp3",
+        "en": "/audio/songs/colossians-3-20-en.mp3"
+      },
+      "imageAssociation": {
+        "sequence": [
+          {
+            "emoji": "👧",
+            "keyword": "children",
+            "keywordKo": "자녀들",
+            "label": "children"
+          },
+          {
+            "emoji": "👨‍👩‍👧",
+            "keyword": "parents",
+            "keywordKo": "부모",
+            "label": "parents"
+          },
+          {
+            "emoji": "😊",
+            "keyword": "obey",
+            "keywordKo": "순종",
+            "label": "obey"
+          },
+          {
+            "emoji": "✝️",
+            "keyword": "pleasing",
+            "keywordKo": "기쁘게",
+            "label": "pleasing"
+          }
+        ],
+        "simpleExplanation": {
+          "en": "Children, listen to your parents — it makes God happy!",
+          "ko": "얘들아, 부모님 말씀을 잘 들어요 — 하나님이 기뻐하세요!"
+        }
+      },
+      "chunks": {
+        "ko": [
+          "자녀들아",
+          "모든 일에 부모에게 순종하라",
+          "이는 주 안에서 기쁘게 하는 것이니라"
+        ],
+        "en": [
+          "Children,",
+          "obey your parents in all things,",
+          "for this is well pleasing in the Lord."
+        ]
+      },
+      "games": {
+        "fillInBlank": {
+          "ko": {
+            "template": "자녀들아 모든 일에 {blank}에게 {blank}하라 이는 주 안에서 기쁘게 하는 것이니라",
+            "blanks": [
+              {
+                "answer": "부모",
+                "answerEmoji": "👨‍👩‍👧",
+                "options": [
+                  {
+                    "emoji": "👨‍👩‍👧",
+                    "label": "parents",
+                    "labelKo": "부모",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "🐶",
+                    "label": "puppy",
+                    "labelKo": "강아지",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "🧸",
+                    "label": "toy",
+                    "labelKo": "장난감",
+                    "correct": false
+                  }
+                ]
+              },
+              {
+                "answer": "순종",
+                "answerEmoji": "😊",
+                "options": [
+                  {
+                    "emoji": "😊",
+                    "label": "obey",
+                    "labelKo": "순종",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "🙉",
+                    "label": "ignore",
+                    "labelKo": "안 들어",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "🏃",
+                    "label": "run away",
+                    "labelKo": "도망",
+                    "correct": false
+                  }
+                ]
+              }
+            ]
+          },
+          "en": {
+            "template": "Children, {blank} your {blank} in all things, for this is well pleasing in the Lord.",
+            "blanks": [
+              {
+                "answer": "obey",
+                "answerEmoji": "😊",
+                "options": [
+                  {
+                    "emoji": "😊",
+                    "label": "obey",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "🙉",
+                    "label": "ignore",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "🏃",
+                    "label": "run from",
+                    "correct": false
+                  }
+                ]
+              },
+              {
+                "answer": "parents",
+                "answerEmoji": "👨‍👩‍👧",
+                "options": [
+                  {
+                    "emoji": "👨‍👩‍👧",
+                    "label": "parents",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "🐶",
+                    "label": "puppy",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "🧸",
+                    "label": "toys",
+                    "correct": false
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "firstLetter": {
+          "ko": [
+            {
+              "word": "부모",
+              "hint": "ㅂ_"
+            },
+            {
+              "word": "순종",
+              "hint": "ㅅ_"
+            }
+          ],
+          "en": [
+            {
+              "word": "obey",
+              "hint": "o___"
+            },
+            {
+              "word": "parents",
+              "hint": "p______"
+            }
+          ]
+        }
+      },
+      "prayer": {
+        "ko": "하나님, 부모님 말씀을 잘 듣고 순종할게요. 아멘.",
+        "en": "God, help me obey my parents with a happy heart. Amen.",
+        "audioKo": "/audio/tts/colossians-3-20-prayer-ko.mp3",
+        "audioEn": "/audio/tts/colossians-3-20-prayer-en.mp3"
+      },
+      "tts": {
+        "ko": "/audio/tts/colossians-3-20-ko.mp3",
+        "en": "/audio/tts/colossians-3-20-en.mp3",
+        "chunksKo": [
+          "/audio/tts/colossians-3-20-chunk-1-ko.mp3",
+          "/audio/tts/colossians-3-20-chunk-2-ko.mp3",
+          "/audio/tts/colossians-3-20-chunk-3-ko.mp3"
+        ],
+        "chunksEn": [
+          "/audio/tts/colossians-3-20-chunk-1-en.mp3",
+          "/audio/tts/colossians-3-20-chunk-2-en.mp3",
+          "/audio/tts/colossians-3-20-chunk-3-en.mp3"
+        ]
+      }
+    },
+    {
+      "id": "psalm-119-105",
+      "reference": {
+        "book": "Psalm",
+        "bookKo": "시편",
+        "chapter": 119,
+        "verse": 105,
+        "display": "Psalm 119:105",
+        "displayKo": "시편 119:105"
+      },
+      "theme": {
+        "en": "God's Word",
+        "ko": "말씀"
+      },
+      "text": {
+        "ko": {
+          "full": "주의 말씀은 내 발에 등이요 내 길에 빛이니이다",
+          "translation": "개역한글"
+        },
+        "en": {
+          "full": "Your word is a lamp to my feet, and a light for my path.",
+          "translation": "WEB"
+        }
+      },
+      "song": {
+        "ko": "/audio/songs/psalm-119-105-ko.mp3",
+        "en": "/audio/songs/psalm-119-105-en.mp3"
+      },
+      "imageAssociation": {
+        "sequence": [
+          {
+            "emoji": "📖",
+            "keyword": "word",
+            "keywordKo": "말씀",
+            "label": "word"
+          },
+          {
+            "emoji": "🔦",
+            "keyword": "lamp",
+            "keywordKo": "등",
+            "label": "lamp"
+          },
+          {
+            "emoji": "🦶",
+            "keyword": "feet",
+            "keywordKo": "발",
+            "label": "feet"
+          },
+          {
+            "emoji": "💡",
+            "keyword": "light",
+            "keywordKo": "빛",
+            "label": "light"
+          },
+          {
+            "emoji": "🛤️",
+            "keyword": "path",
+            "keywordKo": "길",
+            "label": "path"
+          }
+        ],
+        "simpleExplanation": {
+          "en": "God's word is like a light that shows me the way!",
+          "ko": "하나님의 말씀은 내 길을 비춰주는 빛이에요!"
+        }
+      },
+      "chunks": {
+        "ko": [
+          "주의 말씀은",
+          "내 발에 등이요",
+          "내 길에 빛이니이다"
+        ],
+        "en": [
+          "Your word is a lamp to my feet,",
+          "and a light for my path."
+        ]
+      },
+      "games": {
+        "fillInBlank": {
+          "ko": {
+            "template": "주의 말씀은 내 발에 {blank}이요 내 길에 {blank}이니이다",
+            "blanks": [
+              {
+                "answer": "등",
+                "answerEmoji": "🔦",
+                "options": [
+                  {
+                    "emoji": "🔦",
+                    "label": "lamp",
+                    "labelKo": "등",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "🪨",
+                    "label": "rock",
+                    "labelKo": "돌",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "☁️",
+                    "label": "cloud",
+                    "labelKo": "구름",
+                    "correct": false
+                  }
+                ]
+              },
+              {
+                "answer": "빛",
+                "answerEmoji": "💡",
+                "options": [
+                  {
+                    "emoji": "💡",
+                    "label": "light",
+                    "labelKo": "빛",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "🌑",
+                    "label": "dark",
+                    "labelKo": "어둠",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "🕳️",
+                    "label": "hole",
+                    "labelKo": "구덩이",
+                    "correct": false
+                  }
+                ]
+              }
+            ]
+          },
+          "en": {
+            "template": "Your word is a {blank} to my feet, and a {blank} for my path.",
+            "blanks": [
+              {
+                "answer": "lamp",
+                "answerEmoji": "🔦",
+                "options": [
+                  {
+                    "emoji": "🔦",
+                    "label": "lamp",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "🪨",
+                    "label": "rock",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "☁️",
+                    "label": "cloud",
+                    "correct": false
+                  }
+                ]
+              },
+              {
+                "answer": "light",
+                "answerEmoji": "💡",
+                "options": [
+                  {
+                    "emoji": "💡",
+                    "label": "light",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "🌑",
+                    "label": "dark",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "🕳️",
+                    "label": "hole",
+                    "correct": false
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "firstLetter": {
+          "ko": [
+            {
+              "word": "등",
+              "hint": "ㄷ"
+            },
+            {
+              "word": "빛",
+              "hint": "ㅂ"
+            }
+          ],
+          "en": [
+            {
+              "word": "lamp",
+              "hint": "l___"
+            },
+            {
+              "word": "light",
+              "hint": "l____"
+            }
+          ]
+        }
+      },
+      "prayer": {
+        "ko": "하나님, 말씀이 제 길을 밝혀 주세요. 아멘.",
+        "en": "God, let your word light my path. Amen.",
+        "audioKo": "/audio/tts/psalm-119-105-prayer-ko.mp3",
+        "audioEn": "/audio/tts/psalm-119-105-prayer-en.mp3"
+      },
+      "tts": {
+        "ko": "/audio/tts/psalm-119-105-ko.mp3",
+        "en": "/audio/tts/psalm-119-105-en.mp3",
+        "chunksKo": [
+          "/audio/tts/psalm-119-105-chunk-1-ko.mp3",
+          "/audio/tts/psalm-119-105-chunk-2-ko.mp3",
+          "/audio/tts/psalm-119-105-chunk-3-ko.mp3"
+        ],
+        "chunksEn": [
+          "/audio/tts/psalm-119-105-chunk-1-en.mp3",
+          "/audio/tts/psalm-119-105-chunk-2-en.mp3"
+        ]
+      }
+    },
+    {
+      "id": "proverbs-3-5",
+      "reference": {
+        "book": "Proverbs",
+        "bookKo": "잠언",
+        "chapter": 3,
+        "verse": 5,
+        "display": "Proverbs 3:5",
+        "displayKo": "잠언 3:5"
+      },
+      "theme": {
+        "en": "Trust",
+        "ko": "믿음"
+      },
+      "text": {
+        "ko": {
+          "full": "너는 마음을 다하여 여호와를 의뢰하고 네 명철을 의지하지 말라",
+          "translation": "개역한글"
+        },
+        "en": {
+          "full": "Trust in the LORD with all your heart, and don't lean on your own understanding.",
+          "translation": "WEB"
+        }
+      },
+      "song": {
+        "ko": "/audio/songs/proverbs-3-5-ko.mp3",
+        "en": "/audio/songs/proverbs-3-5-en.mp3"
+      },
+      "imageAssociation": {
+        "sequence": [
+          {
+            "emoji": "❤️",
+            "keyword": "heart",
+            "keywordKo": "마음",
+            "label": "heart"
+          },
+          {
+            "emoji": "🙏",
+            "keyword": "trust",
+            "keywordKo": "의뢰",
+            "label": "trust"
+          },
+          {
+            "emoji": "🧠",
+            "keyword": "understanding",
+            "keywordKo": "명철",
+            "label": "understanding"
+          },
+          {
+            "emoji": "❌",
+            "keyword": "don't lean",
+            "keywordKo": "의지 말라",
+            "label": "don't lean"
+          }
+        ],
+        "simpleExplanation": {
+          "en": "Trust God with your whole heart!",
+          "ko": "마음을 다해 하나님을 믿어요!"
+        }
+      },
+      "chunks": {
+        "ko": [
+          "너는 마음을 다하여",
+          "여호와를 의뢰하고",
+          "네 명철을 의지하지 말라"
+        ],
+        "en": [
+          "Trust in the LORD with all your heart,",
+          "and don't lean on your own understanding."
+        ]
+      },
+      "games": {
+        "fillInBlank": {
+          "ko": {
+            "template": "너는 {blank}을 다하여 여호와를 {blank}하고 네 명철을 의지하지 말라",
+            "blanks": [
+              {
+                "answer": "마음",
+                "answerEmoji": "❤️",
+                "options": [
+                  {
+                    "emoji": "❤️",
+                    "label": "heart",
+                    "labelKo": "마음",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "👟",
+                    "label": "shoes",
+                    "labelKo": "신발",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "🍪",
+                    "label": "cookie",
+                    "labelKo": "과자",
+                    "correct": false
+                  }
+                ]
+              },
+              {
+                "answer": "의뢰",
+                "answerEmoji": "🙏",
+                "options": [
+                  {
+                    "emoji": "🙏",
+                    "label": "trust",
+                    "labelKo": "의뢰",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "🙈",
+                    "label": "doubt",
+                    "labelKo": "의심",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "🏃",
+                    "label": "run",
+                    "labelKo": "도망",
+                    "correct": false
+                  }
+                ]
+              }
+            ]
+          },
+          "en": {
+            "template": "{blank} in the LORD with all your {blank}, and don't lean on your own understanding.",
+            "blanks": [
+              {
+                "answer": "Trust",
+                "answerEmoji": "🙏",
+                "options": [
+                  {
+                    "emoji": "🙏",
+                    "label": "Trust",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "🙈",
+                    "label": "Doubt",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "🏃",
+                    "label": "Run",
+                    "correct": false
+                  }
+                ]
+              },
+              {
+                "answer": "heart",
+                "answerEmoji": "❤️",
+                "options": [
+                  {
+                    "emoji": "❤️",
+                    "label": "heart",
+                    "correct": true
+                  },
+                  {
+                    "emoji": "👟",
+                    "label": "shoes",
+                    "correct": false
+                  },
+                  {
+                    "emoji": "🍪",
+                    "label": "cookie",
+                    "correct": false
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "firstLetter": {
+          "ko": [
+            {
+              "word": "마음",
+              "hint": "ㅁ_"
+            },
+            {
+              "word": "의뢰",
+              "hint": "ㅇ_"
+            }
+          ],
+          "en": [
+            {
+              "word": "Trust",
+              "hint": "T____"
+            },
+            {
+              "word": "heart",
+              "hint": "h____"
+            }
+          ]
+        }
+      },
+      "prayer": {
+        "ko": "하나님, 제 마음을 다해 하나님을 믿어요. 아멘.",
+        "en": "God, I trust you with all my heart. Amen.",
+        "audioKo": "/audio/tts/proverbs-3-5-prayer-ko.mp3",
+        "audioEn": "/audio/tts/proverbs-3-5-prayer-en.mp3"
+      },
+      "tts": {
+        "ko": "/audio/tts/proverbs-3-5-ko.mp3",
+        "en": "/audio/tts/proverbs-3-5-en.mp3",
+        "chunksKo": [
+          "/audio/tts/proverbs-3-5-chunk-1-ko.mp3",
+          "/audio/tts/proverbs-3-5-chunk-2-ko.mp3",
+          "/audio/tts/proverbs-3-5-chunk-3-ko.mp3"
+        ],
+        "chunksEn": [
+          "/audio/tts/proverbs-3-5-chunk-1-en.mp3",
+          "/audio/tts/proverbs-3-5-chunk-2-en.mp3"
         ]
       }
     }
