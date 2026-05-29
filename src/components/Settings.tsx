@@ -8,10 +8,11 @@ type Props = {
   save: SaveData;
   onChangeCharacter: () => void;
   onReset: () => void;
+  onStory: () => void;
   onClose: () => void;
 };
 
-export function Settings({ save, onChangeCharacter, onReset, onClose }: Props) {
+export function Settings({ save, onChangeCharacter, onReset, onStory, onClose }: Props) {
   const [confirmReset, setConfirmReset] = useState(false);
   const avatar = AVATARS.find((a) => a.id === save.avatarId);
   const avatarEmoji = avatar?.emoji ?? "👦";
@@ -85,6 +86,15 @@ export function Settings({ save, onChangeCharacter, onReset, onClose }: Props) {
           </div>
         )}
       </div>
+
+      <button
+        type="button"
+        onClick={onStory}
+        className="rounded-card bg-white p-4 text-left shadow-play transition-all active:scale-[0.98]"
+      >
+        <p className="text-sm font-semibold text-ink">✨ 만든이 이야기</p>
+        <p className="mt-1 text-xs text-ink-sub">MannaBite를 만든 사람</p>
+      </button>
     </section>
   );
 }

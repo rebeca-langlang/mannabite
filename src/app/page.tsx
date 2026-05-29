@@ -22,9 +22,10 @@ import { FirstLetterStep } from "@/components/flow/FirstLetterStep";
 import { PrayerStep } from "@/components/flow/PrayerStep";
 import { DoneStep } from "@/components/flow/DoneStep";
 import { DavidCollection } from "@/components/DavidCollection";
+import { CreatorStory } from "@/components/CreatorStory";
 import { stopSpeaking } from "@/lib/speak";
 
-type Screen = "loading" | "onboarding" | "home" | "settings" | "collection" | "flow";
+type Screen = "loading" | "onboarding" | "home" | "settings" | "collection" | "story" | "flow";
 type FlowStep = "image" | "song" | "chunk" | "game" | "firstLetter" | "prayer" | "done";
 
 const FLOW_STEPS: FlowStep[] = ["image", "song", "chunk", "game", "firstLetter", "prayer", "done"];
@@ -167,6 +168,7 @@ export default function Page() {
           save={save}
           onChangeCharacter={() => setScreen("onboarding")}
           onReset={handleReset}
+          onStory={() => setScreen("story")}
           onClose={handleHome}
         />
       </main>
@@ -177,6 +179,14 @@ export default function Page() {
     return (
       <main className="mx-auto flex min-h-dvh max-w-[480px] flex-col bg-cream">
         <DavidCollection save={save} onBack={handleHome} />
+      </main>
+    );
+  }
+
+  if (screen === "story") {
+    return (
+      <main className="mx-auto flex min-h-dvh max-w-[480px] flex-col bg-cream">
+        <CreatorStory onBack={() => setScreen("settings")} />
       </main>
     );
   }
