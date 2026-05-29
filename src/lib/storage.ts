@@ -1,13 +1,5 @@
-export type CharacterGender = "boy" | "girl";
-export type SkinTone = "light" | "medium" | "dark";
-
-export type Character = {
-  gender: CharacterGender;
-  skinTone: SkinTone;
-};
-
 export type SaveData = {
-  character: Character;
+  avatarId: string;
   currentDay: number;
   completedDays: number[];
   collectedItemSlots: number[];
@@ -24,10 +16,15 @@ export function loadSave(): SaveData | null {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return null;
-    const data = JSON.parse(raw) as SaveData;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const data = JSON.parse(raw) as any;
+    if (data.character && !data.avatarId) {
+      data.avatarId = data.character.gender ?? "boy";
+      delete data.character;
+    }
     if (!data.collectedItemSlots) data.collectedItemSlots = [];
     if (!data.collectedChantIds) data.collectedChantIds = [];
-    return data;
+    return data as SaveData;
   } catch {
     return null;
   }
@@ -53,16 +50,6 @@ export function calcStreak(prev: SaveData): number {
   if (prev.lastPlayedDate === getYesterday()) return prev.streak + 1;
   return 1;
 }
-
-export const CHARACTER_EMOJI: Record<CharacterGender, Record<SkinTone, string>> = {
-  boy: { light: "👦🏻", medium: "👦🏽", dark: "👦🏿" },
-  girl: { light: "👧🏻", medium: "👧🏽", dark: "👧🏿" },
-};
-
-export const CHARACTER_IMAGE: Record<CharacterGender, string> = {
-  boy: "/characters/boy.png",
-  girl: "/characters/girl.png",
-};
 
 const LEVELS = [
   { min: 0, title: "말씀 새싹" },

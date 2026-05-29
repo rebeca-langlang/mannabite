@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
-import { CHARACTER_IMAGE, type SaveData } from "@/lib/storage";
-import { PLAN } from "@/data/verses";
+import type { SaveData } from "@/lib/storage";
+import { PLAN, AVATARS } from "@/data/verses";
 
 type Props = {
   save: SaveData;
@@ -14,7 +13,8 @@ type Props = {
 
 export function Settings({ save, onChangeCharacter, onReset, onClose }: Props) {
   const [confirmReset, setConfirmReset] = useState(false);
-  const charSrc = CHARACTER_IMAGE[save.character.gender];
+  const avatar = AVATARS.find((a) => a.id === save.avatarId);
+  const avatarEmoji = avatar?.emoji ?? "👦";
 
   return (
     <section className="flex flex-col gap-5 px-4 pb-28 pt-6">
@@ -31,9 +31,11 @@ export function Settings({ save, onChangeCharacter, onReset, onClose }: Props) {
       </div>
 
       <div className="rounded-card bg-white p-4 shadow-play">
-        <p className="mb-3 text-sm font-semibold text-ink">내 캐릭터</p>
+        <p className="mb-3 text-sm font-semibold text-ink">내 친구</p>
         <div className="flex items-center gap-4">
-          <Image src={charSrc} alt="내 캐릭터" width={80} height={80} className="h-[80px] w-[80px] rounded-card object-cover" />
+          <div className="flex h-[80px] w-[80px] items-center justify-center rounded-card bg-honey-tint text-5xl">
+            {avatarEmoji}
+          </div>
           <button
             type="button"
             onClick={onChangeCharacter}

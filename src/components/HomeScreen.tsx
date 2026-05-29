@@ -1,9 +1,7 @@
 "use client";
 
-import Image from "next/image";
-import { VERSES, PLAN, CHARACTERS } from "@/data/verses";
+import { VERSES, PLAN, CHARACTERS, AVATARS } from "@/data/verses";
 import {
-  CHARACTER_IMAGE,
   getLevel,
   getVerseIndex,
   type SaveData,
@@ -17,13 +15,15 @@ type Props = {
 };
 
 export function HomeScreen({ save, onStart, onSettings, onCollection }: Props) {
-  const { character, currentDay, completedDays, totalStars, streak, collectedItemSlots } = save;
+  const { avatarId, currentDay, completedDays, totalStars, streak, collectedItemSlots } = save;
   const { level, title } = getLevel(totalStars);
   const verseIndex = getVerseIndex(currentDay);
   const verse = VERSES[verseIndex];
-  const charSrc = CHARACTER_IMAGE[character.gender];
   const totalDays = PLAN.totalDays;
   const allDone = currentDay > totalDays;
+
+  const avatar = AVATARS.find((a) => a.id === avatarId);
+  const avatarEmoji = avatar?.emoji ?? "👦";
 
   const david = CHARACTERS[0];
   const currentStage = david.stages
@@ -47,7 +47,9 @@ export function HomeScreen({ save, onStart, onSettings, onCollection }: Props) {
       </div>
 
       <div className="flex flex-col items-center gap-1 py-2">
-        <Image src={charSrc} alt="내 캐릭터" width={100} height={100} className="h-[100px] w-[100px] rounded-card object-cover" />
+        <div className="flex h-[100px] w-[100px] items-center justify-center rounded-card bg-honey-tint text-6xl">
+          {avatarEmoji}
+        </div>
         <p className="mt-1 text-sm font-bold text-ink">
           Lv.{level} {title}
         </p>

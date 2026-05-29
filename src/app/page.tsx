@@ -8,7 +8,6 @@ import {
   getVerseIndex,
   loadSave,
   writeSave,
-  type Character,
   type SaveData,
 } from "@/lib/storage";
 import { StepHeader } from "@/components/StepHeader";
@@ -40,9 +39,9 @@ const STEP_LABEL: Record<FlowStep, string> = {
   done: "오늘의 완료",
 };
 
-function newSave(character: Character): SaveData {
+function newSave(avatarId: string): SaveData {
   return {
-    character,
+    avatarId,
     currentDay: 1,
     completedDays: [],
     collectedItemSlots: [],
@@ -78,10 +77,10 @@ export default function Page() {
     writeSave(data);
   };
 
-  const handleCharacterDone = (character: Character) => {
+  const handleAvatarDone = (avatarId: string) => {
     const data = save
-      ? { ...save, character }
-      : newSave(character);
+      ? { ...save, avatarId }
+      : newSave(avatarId);
     persist(data);
     setScreen("home");
   };
@@ -138,7 +137,7 @@ export default function Page() {
 
   const handleReset = () => {
     if (!save) return;
-    const data = newSave(save.character);
+    const data = newSave(save.avatarId);
     persist(data);
     setScreen("home");
   };
@@ -154,7 +153,7 @@ export default function Page() {
   if (screen === "onboarding" || (screen === "settings" && !save)) {
     return (
       <main className="mx-auto flex min-h-dvh max-w-[480px] flex-col bg-cream">
-        <CharacterSelect onComplete={handleCharacterDone} />
+        <CharacterSelect onComplete={handleAvatarDone} />
       </main>
     );
   }
