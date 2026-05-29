@@ -23,9 +23,11 @@ import { PrayerStep } from "@/components/flow/PrayerStep";
 import { DoneStep } from "@/components/flow/DoneStep";
 import { DavidCollection } from "@/components/DavidCollection";
 import { CreatorStory } from "@/components/CreatorStory";
+import { FeedbackForm } from "@/components/FeedbackForm";
 import { stopSpeaking } from "@/lib/speak";
 
-type Screen = "loading" | "onboarding" | "home" | "settings" | "collection" | "story" | "flow";
+type Screen = "loading" | "onboarding" | "home" | "settings" | "collection" | "story" | "feedback" | "flow";
+type FeedbackType = "feedback" | "verse_request";
 type FlowStep = "image" | "song" | "chunk" | "game" | "firstLetter" | "prayer" | "done";
 
 const FLOW_STEPS: FlowStep[] = ["image", "song", "chunk", "game", "firstLetter", "prayer", "done"];
@@ -62,6 +64,7 @@ export default function Page() {
   const [lang, setLang] = useState<Lang>("ko");
   const [stars, setStars] = useState(0);
   const [unlockedItem, setUnlockedItem] = useState<UnlockedItem>(null);
+  const [feedbackType, setFeedbackType] = useState<FeedbackType>("feedback");
 
   useEffect(() => {
     const loaded = loadSave();
@@ -169,6 +172,8 @@ export default function Page() {
           onChangeCharacter={() => setScreen("onboarding")}
           onReset={handleReset}
           onStory={() => setScreen("story")}
+          onFeedback={() => { setFeedbackType("feedback"); setScreen("feedback"); }}
+          onVerseRequest={() => { setFeedbackType("verse_request"); setScreen("feedback"); }}
           onClose={handleHome}
         />
       </main>
@@ -187,6 +192,14 @@ export default function Page() {
     return (
       <main className="mx-auto flex min-h-dvh max-w-[480px] flex-col bg-cream">
         <CreatorStory onBack={() => setScreen("settings")} />
+      </main>
+    );
+  }
+
+  if (screen === "feedback") {
+    return (
+      <main className="mx-auto flex min-h-dvh max-w-[480px] flex-col bg-cream">
+        <FeedbackForm type={feedbackType} onBack={() => setScreen("settings")} />
       </main>
     );
   }
