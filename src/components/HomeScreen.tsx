@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { VERSES, PLAN } from "@/data/verses";
+import { VERSES, PLAN, CHARACTERS } from "@/data/verses";
 import {
   CHARACTER_IMAGE,
   getLevel,
@@ -13,16 +13,22 @@ type Props = {
   save: SaveData;
   onStart: () => void;
   onSettings: () => void;
+  onCollection: () => void;
 };
 
-export function HomeScreen({ save, onStart, onSettings }: Props) {
-  const { character, currentDay, completedDays, totalStars, streak } = save;
+export function HomeScreen({ save, onStart, onSettings, onCollection }: Props) {
+  const { character, currentDay, completedDays, totalStars, streak, collectedItemSlots } = save;
   const { level, title } = getLevel(totalStars);
   const verseIndex = getVerseIndex(currentDay);
   const verse = VERSES[verseIndex];
   const charSrc = CHARACTER_IMAGE[character.gender];
   const totalDays = PLAN.totalDays;
   const allDone = currentDay > totalDays;
+
+  const david = CHARACTERS[0];
+  const currentStage = david.stages
+    .filter((s) => s.dayFrom <= currentDay)
+    .at(-1) ?? david.stages[0];
 
   return (
     <section className="flex flex-col gap-5 px-4 pb-28 pt-6">
@@ -47,6 +53,21 @@ export function HomeScreen({ save, onStart, onSettings }: Props) {
         </p>
         <p className="text-xs text-ink-sub">⭐ {totalStars}</p>
       </div>
+
+      <button
+        type="button"
+        onClick={onCollection}
+        className="flex items-center gap-3 rounded-card bg-white p-4 shadow-play transition-all active:scale-[0.98]"
+      >
+        <span className="text-3xl">⚔️</span>
+        <div className="flex-1 text-left">
+          <p className="text-sm font-bold text-ink">{currentStage.nameKo}</p>
+          <p className="text-xs text-ink-sub">
+            아이템 {collectedItemSlots.length}/{david.items.length}
+          </p>
+        </div>
+        <span className="text-sm text-ink-sub">도감 →</span>
+      </button>
 
       {!allDone ? (
         <button
@@ -99,10 +120,8 @@ export function HomeScreen({ save, onStart, onSettings }: Props) {
         <p className="mb-2 text-xs font-semibold text-ink-sub">외운 구절</p>
         <div className="flex flex-col gap-2">
           {VERSES.map((v, i) => {
-            const startDay = i * 3 + 1;
-            const done = completedDays.some(
-              (d) => d >= startDay && d <= startDay + 2
-            );
+            const day = i + 1;
+            const done = completedDays.includes(day);
             const isCurrent = verseIndex === i && !allDone;
             return (
               <div

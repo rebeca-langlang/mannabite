@@ -10,6 +10,8 @@ export type SaveData = {
   character: Character;
   currentDay: number;
   completedDays: number[];
+  collectedItemSlots: number[];
+  collectedChantIds: string[];
   totalStars: number;
   streak: number;
   lastPlayedDate: string;
@@ -22,7 +24,10 @@ export function loadSave(): SaveData | null {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return null;
-    return JSON.parse(raw) as SaveData;
+    const data = JSON.parse(raw) as SaveData;
+    if (!data.collectedItemSlots) data.collectedItemSlots = [];
+    if (!data.collectedChantIds) data.collectedChantIds = [];
+    return data;
   } catch {
     return null;
   }

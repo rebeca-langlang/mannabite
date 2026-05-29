@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { VERSES, type Lang } from "@/data/verses";
+import { VERSES, CHARACTERS, type Lang } from "@/data/verses";
 import {
   calcStreak,
   getToday,
@@ -22,9 +22,10 @@ import { GameStep } from "@/components/flow/GameStep";
 import { FirstLetterStep } from "@/components/flow/FirstLetterStep";
 import { PrayerStep } from "@/components/flow/PrayerStep";
 import { DoneStep } from "@/components/flow/DoneStep";
+import { DavidCollection } from "@/components/DavidCollection";
 import { stopSpeaking } from "@/lib/speak";
 
-type Screen = "loading" | "onboarding" | "home" | "settings" | "flow";
+type Screen = "loading" | "onboarding" | "home" | "settings" | "collection" | "flow";
 type FlowStep = "image" | "song" | "chunk" | "game" | "firstLetter" | "prayer" | "done";
 
 const FLOW_STEPS: FlowStep[] = ["image", "song", "chunk", "game", "firstLetter", "prayer", "done"];
@@ -44,11 +45,15 @@ function newSave(character: Character): SaveData {
     character,
     currentDay: 1,
     completedDays: [],
+    collectedItemSlots: [],
+    collectedChantIds: [],
     totalStars: 0,
     streak: 0,
     lastPlayedDate: "",
   };
 }
+
+type UnlockedItem = { emoji: string; nameKo: string } | null;
 
 export default function Page() {
   const [screen, setScreen] = useState<Screen>("loading");
@@ -56,6 +61,7 @@ export default function Page() {
   const [flowStep, setFlowStep] = useState<FlowStep>("image");
   const [lang, setLang] = useState<Lang>("ko");
   const [stars, setStars] = useState(0);
+  const [unlockedItem, setUnlockedItem] = useState<UnlockedItem>(null);
 
   useEffect(() => {
     const loaded = loadSave();
@@ -99,15 +105,28 @@ export default function Page() {
 
   const handlePrayerDone = () => {
     if (!save) return;
+    const completedDay = save.currentDay;
     const streak = calcStreak(save);
+    const verseId = VERSES[getVerseIndex(completedDay)]?.id;
+    const david = CHARACTERS[0];
+    const item = david?.items.find((it) => it.slot === completedDay);
+
     const updated: SaveData = {
       ...save,
-      completedDays: [...save.completedDays, save.currentDay],
-      currentDay: save.currentDay + 1,
+      completedDays: [...save.completedDays, completedDay],
+      collectedItemSlots: save.collectedItemSlots.includes(completedDay)
+        ? save.collectedItemSlots
+        : [...save.collectedItemSlots, completedDay],
+      collectedChantIds:
+        verseId && !save.collectedChantIds.includes(verseId)
+          ? [...save.collectedChantIds, verseId]
+          : save.collectedChantIds,
+      currentDay: completedDay + 1,
       totalStars: save.totalStars + stars,
       streak,
       lastPlayedDate: getToday(),
     };
+    setUnlockedItem(item ? { emoji: item.emoji, nameKo: item.nameKo } : null);
     persist(updated);
     gotoFlow("done");
   };
@@ -155,6 +174,14 @@ export default function Page() {
     );
   }
 
+  if (screen === "collection") {
+    return (
+      <main className="mx-auto flex min-h-dvh max-w-[480px] flex-col bg-cream">
+        <DavidCollection save={save} onBack={handleHome} />
+      </main>
+    );
+  }
+
   if (screen === "home") {
     return (
       <main className="mx-auto flex min-h-dvh max-w-[480px] flex-col bg-cream">
@@ -162,6 +189,7 @@ export default function Page() {
           save={save}
           onStart={handleStartFlow}
           onSettings={() => setScreen("settings")}
+          onCollection={() => setScreen("collection")}
         />
       </main>
     );
@@ -243,6 +271,7 @@ export default function Page() {
           verse={verse}
           stars={stars}
           streak={save.streak}
+          unlockedItem={unlockedItem}
           onHome={handleHome}
         />
       )}

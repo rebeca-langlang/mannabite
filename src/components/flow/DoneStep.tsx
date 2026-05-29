@@ -6,10 +6,11 @@ type Props = {
   verse: Verse;
   stars: number;
   streak: number;
+  unlockedItem: { emoji: string; nameKo: string } | null;
   onHome: () => void;
 };
 
-export function DoneStep({ verse, stars, streak, onHome }: Props) {
+export function DoneStep({ verse, stars, streak, unlockedItem, onHome }: Props) {
   const xp = stars * 5 + 10;
   return (
     <section className="flex flex-col items-center gap-6 px-4 pb-28 pt-8 text-center">
@@ -29,6 +30,16 @@ export function DoneStep({ verse, stars, streak, onHome }: Props) {
         <p className="mt-1 text-sm text-ink-sub">{verse.text.en.full}</p>
         <p className="mt-2 text-xl">✅</p>
       </div>
+
+      {unlockedItem && (
+        <div className="w-full rounded-card border-2 border-sun bg-sun-tint p-4 animate-pop">
+          <p className="text-4xl animate-bounce">{unlockedItem.emoji}</p>
+          <p className="mt-2 text-sm font-bold text-honey-dark">
+            새 아이템 획득!
+          </p>
+          <p className="mt-1 text-xs text-ink-sub">{unlockedItem.nameKo}</p>
+        </div>
+      )}
 
       <div className="flex gap-3">
         <div className="rounded-pill bg-sun-tint px-4 py-2 text-sm font-bold text-honey-dark">
