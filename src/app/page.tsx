@@ -19,20 +19,22 @@ import { ImageStep } from "@/components/flow/ImageStep";
 import { SongStep } from "@/components/flow/SongStep";
 import { ChunkStep } from "@/components/flow/ChunkStep";
 import { GameStep } from "@/components/flow/GameStep";
+import { FirstLetterStep } from "@/components/flow/FirstLetterStep";
 import { PrayerStep } from "@/components/flow/PrayerStep";
 import { DoneStep } from "@/components/flow/DoneStep";
 import { stopSpeaking } from "@/lib/speak";
 
 type Screen = "loading" | "onboarding" | "home" | "settings" | "flow";
-type FlowStep = "image" | "song" | "chunk" | "game" | "prayer" | "done";
+type FlowStep = "image" | "song" | "chunk" | "game" | "firstLetter" | "prayer" | "done";
 
-const FLOW_STEPS: FlowStep[] = ["image", "song", "chunk", "game", "prayer", "done"];
+const FLOW_STEPS: FlowStep[] = ["image", "song", "chunk", "game", "firstLetter", "prayer", "done"];
 
 const STEP_LABEL: Record<FlowStep, string> = {
   image: "그림으로 이해",
   song: "노래로 만나기",
   chunk: "청크로 쌓기",
   game: "게임으로 외우기",
+  firstLetter: "초성으로 복습",
   prayer: "기도로 새기기",
   done: "오늘의 완료",
 };
@@ -92,7 +94,7 @@ export default function Page() {
 
   const handleGameComplete = (earned: number) => {
     setStars(earned);
-    gotoFlow("prayer");
+    gotoFlow("firstLetter");
   };
 
   const handlePrayerDone = () => {
@@ -216,6 +218,15 @@ export default function Page() {
           onLangChange={setLang}
           onBack={() => gotoFlow("chunk")}
           onComplete={handleGameComplete}
+        />
+      )}
+      {flowStep === "firstLetter" && (
+        <FirstLetterStep
+          verse={verse}
+          lang={lang}
+          onLangChange={setLang}
+          onNext={() => gotoFlow("prayer")}
+          onBack={() => gotoFlow("game")}
         />
       )}
       {flowStep === "prayer" && (
