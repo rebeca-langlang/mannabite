@@ -78,5 +78,5 @@ export function getLevel(stars: number): { level: number; title: string } {
 }
 
 export function getVerseIndex(day: number): number {
-  return Math.min(Math.floor((day - 1) / 3), 9);
+  return Math.min(day - 1, 9);
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { VERSES } from "@/data/verses";
+import { VERSES, PLAN } from "@/data/verses";
 import {
   CHARACTER_IMAGE,
   getLevel,
@@ -21,7 +21,8 @@ export function HomeScreen({ save, onStart, onSettings }: Props) {
   const verseIndex = getVerseIndex(currentDay);
   const verse = VERSES[verseIndex];
   const charSrc = CHARACTER_IMAGE[character.gender];
-  const allDone = currentDay > 30;
+  const totalDays = PLAN.totalDays;
+  const allDone = currentDay > totalDays;
 
   return (
     <section className="flex flex-col gap-5 px-4 pb-28 pt-6">
@@ -71,7 +72,7 @@ export function HomeScreen({ save, onStart, onSettings }: Props) {
         <div className="rounded-card bg-sage-tint p-5 text-center">
           <p className="text-2xl">🎉</p>
           <p className="mt-1 text-sm font-bold text-sage-dark">
-            30일 플랜 완료!
+            {totalDays}일 챌린지 완료!
           </p>
           <p className="mt-1 text-xs text-ink-sub">
             모든 구절을 외웠어요! 대단해요!
@@ -83,13 +84,13 @@ export function HomeScreen({ save, onStart, onSettings }: Props) {
         <div className="mb-2 flex items-center justify-between text-xs">
           <span className="font-semibold text-ink-sub">나의 진도</span>
           <span className="font-bold text-honey-dark">
-            Day {Math.min(currentDay, 30)}/30
+            Day {Math.min(currentDay, totalDays)}/{totalDays}
           </span>
         </div>
         <div className="h-3 overflow-hidden rounded-full bg-honey-tint">
           <div
             className="h-full rounded-full bg-gradient-to-r from-honey to-sun transition-all"
-            style={{ width: `${(Math.min(currentDay - 1, 30) / 30) * 100}%` }}
+            style={{ width: `${(Math.min(currentDay - 1, totalDays) / totalDays) * 100}%` }}
           />
         </div>
       </div>

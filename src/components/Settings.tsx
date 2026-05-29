@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { CHARACTER_IMAGE, type SaveData } from "@/lib/storage";
+import { PLAN } from "@/data/verses";
 
 type Props = {
   save: SaveData;
@@ -46,7 +47,7 @@ export function Settings({ save, onChangeCharacter, onReset, onClose }: Props) {
       <div className="rounded-card bg-white p-4 shadow-play">
         <p className="mb-3 text-sm font-semibold text-ink">학습 데이터</p>
         <div className="flex flex-col gap-2 text-xs text-ink-sub">
-          <p>진도: Day {save.currentDay}/30</p>
+          <p>진도: Day {save.currentDay}/{PLAN.totalDays}</p>
           <p>총 별: ⭐ {save.totalStars}</p>
           <p>연속 학습: 🔥 {save.streak}일</p>
         </div>
